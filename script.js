@@ -1255,6 +1255,7 @@ console.log("3. Thunder started");
             guardianSpeech.onended = resolve;
         }
 
+        
     });
 
     // Small pause

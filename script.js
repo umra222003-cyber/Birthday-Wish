@@ -16,7 +16,32 @@ const loadingScreen = document.getElementById("loading-screen");
 const welcomeScreen = document.getElementById("welcomeScreen");
 const mainWebsite = document.getElementById("mainWebsite");
 
+// =========================
+// Guardian Intro Elements
+// =========================
 
+const guardianIntro = document.getElementById("guardianIntro");
+const guardianImage = document.getElementById("guardianImage");
+const guardianText = document.getElementById("guardianText");
+const lightningFlash = document.getElementById("lightningFlash");
+
+const guardianSpeech = new Audio("Music/guardian-voice.mp3");
+const thunderSound = new Audio("Music/thunder.mp3");
+
+/*=========================================================
+                    BACKGROUND MUSIC
+=========================================================*/
+
+const backgroundMusic = document.getElementById("backgroundMusic");
+
+
+/*=========================================================
+                    STATE FLAGS
+=========================================================*/
+
+let websiteUnlocked = false;
+let guardianFinished = false;
+let musicStarted = false;
 
 /*=========================================================
                 WAIT FOR PAGE LOAD
@@ -106,6 +131,8 @@ document.querySelectorAll('a[href^="#"]').forEach(link=>{
 
 function startCountdown() {
 
+    let timer;
+
     function updateCountdown() {
 
         const now = Date.now();
@@ -122,7 +149,9 @@ function startCountdown() {
             loadingScreen.style.display = "none";
             welcomeScreen.style.display = "flex";
 
-            clearInterval(timer);
+            if (timer) {
+    clearInterval(timer);
+}
 
             return;
         }
@@ -151,8 +180,10 @@ function startCountdown() {
 
     }
 
-    updateCountdown();              // <-- update immediately
-    const timer = setInterval(updateCountdown, 1000);
+  
+updateCountdown();
+
+timer = setInterval(updateCountdown, 1000);
 
 }
 
@@ -173,37 +204,54 @@ function openEnvelope(){
                 PASSWORD CHECK
 =========================================================*/
 
-function checkPassword(){
+async function checkPassword() {
 
-    const passwordInput =
-        document.getElementById("password").value.trim();
+    const enteredPassword =
+    document.getElementById("password").value.trim();
 
-    const error = document.getElementById("error");
+const errorMessage =
+    document.getElementById("error");
 
-    if(passwordInput === PASSWORD){
+    if (enteredPassword === PASSWORD) {
 
         openEnvelope();
 
-        error.style.color="#00E676";
-        error.textContent="❤️ Welcome...";
+errorMessage.style.color = "#00E676";
+errorMessage.textContent = "💖 Welcome...";
 
-        setTimeout(()=>{
+setTimeout(async () => {
 
-            welcomeScreen.style.opacity="0";
+    welcomeScreen.style.opacity = "0";
 
-            setTimeout(()=>{
+    setTimeout(async () => {
 
-                welcomeScreen.style.display="none";
-                mainWebsite.style.display="block";
+        welcomeScreen.style.display = "none";
 
-            },900);
+        console.log("Guardian Intro Started");
 
-        },700);
+await playGuardianIntro();
+console.log("1. playGuardianIntro entered");
+
+console.log("Guardian Intro Finished");
+
+        mainWebsite.style.display = "block";
+
+        const music = document.getElementById("bgMusic");
+
+        if (music) {
+
+            music.play().catch(() => {});
+
+        }
+
+    }, 900);
+
+}, 700);
 
     }else{
 
-        error.style.color="#ff5252";
-        error.textContent="Incorrect Password";
+        errorMessage.style.color="#ff5252";
+        errorMessage.textContent="Incorrect Password";
 
     }
 
@@ -942,7 +990,7 @@ function revealSecret() {
         </h3>
 
         <p>
-            I love you endlessly. ❤️
+            I love you silly. ❤️
         </p>
     `;
 
@@ -1083,5 +1131,145 @@ function createHeartBlast(){
         },3000);
 
     }
+
+}
+
+const guardianLines = [
+
+"Who dares awaken the Hall of Memories?",
+
+"...",
+
+"I have watched countless warriors...",
+
+"But today...",
+
+"I welcome one whose journey deserves to be celebrated.",
+
+"Welcome, Pawan."
+
+];
+
+
+function typeGuardianText(message, speed = 45) {
+
+    guardianText.innerHTML = "";
+
+    let i = 0;
+
+    return new Promise(resolve => {
+
+        function type() {
+
+            if (i < message.length) {
+
+                guardianText.innerHTML += message.charAt(i);
+
+                i++;
+
+                setTimeout(type, speed);
+
+            } else {
+
+                resolve();
+
+            }
+
+        }
+
+        type();
+
+    });
+
+}
+/*=========================================================
+                    LIGHTNING EFFECT
+=========================================================*/
+
+function flashLightning() {
+
+    if (!lightningFlash) return;
+
+    lightningFlash.classList.add("flash");
+
+    setTimeout(() => {
+        lightningFlash.classList.remove("flash");
+    }, 120);
+
+    setTimeout(() => {
+        lightningFlash.classList.add("flash");
+    }, 250);
+
+    setTimeout(() => {
+        lightningFlash.classList.remove("flash");
+    }, 380);
+
+}
+
+async function playGuardianIntro() {
+    console.log("1. Entered playGuardianIntro()");
+
+    // Show the guardian screen
+    guardianIntro.classList.remove("guardian-hidden");
+    guardianIntro.classList.add("show");
+    console.log("2. Guardian screen shown");
+    console.log("3. Guardian image shown");
+
+console.log("2. Guardian should now be visible");
+
+    guardianText.innerHTML = "";
+
+    guardianImage.classList.remove("guardian-show");
+
+    // Start thunder
+thunderSound.currentTime = 0;
+thunderSound.play().catch(() => {});
+
+// Lightning flashes with thunder
+flashLightning();
+
+console.log("3. Thunder started");
+
+    // Wait a moment
+    await new Promise(resolve => setTimeout(resolve, 1200));
+
+    // Animate guardian
+    guardianImage.classList.add("guardian-show");
+
+    // Start narration
+    guardianSpeech.currentTime = 0;
+    guardianSpeech.play().catch(() => {});
+
+    await new Promise(resolve => setTimeout(resolve, 500));
+
+    // Type the subtitle
+    await typeGuardianText(
+        "Greetings... traveler.\n\nBeyond this gate lies a journey created with memories, patience and love.\n\nWelcome, Pawan.\n\nYour adventure begins now."
+    );
+
+    // Wait until the voice finishes
+    await new Promise(resolve => {
+
+        if (guardianSpeech.ended) {
+            resolve();
+        } else {
+            guardianSpeech.onended = resolve;
+        }
+
+    });
+
+    // Small pause
+    await new Promise(resolve => setTimeout(resolve, 800));
+
+    // Hide guardian
+
+console.log("4. Guardian about to hide");
+
+guardianImage.classList.remove("guardian-show");
+
+console.log("4. Guardian closing");
+
+guardianIntro.classList.remove("show");
+guardianIntro.classList.add("guardian-hidden");
 
 }

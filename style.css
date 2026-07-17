@@ -2929,3 +2929,107 @@ button{
     }
 }
 
+/* ================================
+   GUARDIAN INTRO
+================================ */
+
+#guardianIntro{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.96);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+
+    opacity:0;
+    visibility:hidden;
+    transition:1s;
+}
+
+/*=========================================================
+                    LIGHTNING FLASH
+=========================================================*/
+
+#lightningFlash{
+    position:fixed;
+    inset:0;
+    background:white;
+    opacity:0;
+    pointer-events:none;
+    z-index:9998;
+    transition:opacity .12s ease;
+}
+
+#lightningFlash.flash{
+    opacity:.9;
+}
+
+#guardianIntro.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.guardian-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(circle at center,
+    rgba(40,40,60,.2),
+    rgba(0,0,0,.95));
+}
+
+.guardian-content{
+    position:relative;
+    z-index:5;
+
+    text-align:center;
+}
+
+.guardian-image{
+
+    width:420px;
+
+    max-width:80vw;
+
+    filter:
+    drop-shadow(0 0 25px #7fd3ff)
+    drop-shadow(0 0 60px #4bc0ff);
+
+    animation:guardianFloat 4s ease-in-out infinite;
+}
+
+@keyframes guardianFloat{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.guardian-text{
+
+margin-top:35px;
+
+font-size:28px;
+
+font-weight:600;
+
+color:white;
+
+letter-spacing:2px;
+
+min-height:70px;
+
+text-shadow:0 0 20px cyan;
+}
+

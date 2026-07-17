@@ -61,9 +61,9 @@ body{
 
     --glass:rgba(255,255,255,.08);
 
-    --glass-border:rgba(255,255,255,.15);
+    --glass-border:rgba(255,255,255,0.15);
 
-    --shadow:0 20px 50px rgba(0,0,0,.30);
+    --shadow:0 20px 50px rgba(0,0,0,0.30);
 
     --radius:24px;
 
@@ -237,7 +237,7 @@ button{
 
     background:transparent;
 
-    border:2px solid rgba(255,255,255,.25);
+    border:2px solid rgba(255,255,255,0.25);
 
     color:white;
 
@@ -366,7 +366,7 @@ button{
 
     0%{
 
-        text-shadow:0 0 5px rgba(255,255,255,.2);
+        text-shadow:0 0 5px rgba(255,255,255,0.2);
 
     }
 
@@ -526,9 +526,9 @@ button{
 
     border-radius:25px;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.08);
 
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,015);
 
     backdrop-filter:blur(15px);
 
@@ -548,7 +548,7 @@ button{
 
     transform:translateY(-8px);
 
-    background:rgba(255,255,255,.12);
+    background:rgba(255,255,255,0.12);
 
 }
 
@@ -750,7 +750,7 @@ button{
 
     transition:.7s;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
+    box-shadow:0 15px 40px rgba(0,0,0,0.35);
 
 }
 
@@ -920,7 +920,7 @@ button{
 
     padding:18px 40px;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.08);
 
     backdrop-filter:blur(18px);
 
@@ -1170,7 +1170,7 @@ button{
 
     font-size:22px;
 
-    color:rgba(255,255,255,.35);
+    color:rgba(255,255,255,0.35);
 
     animation:heartFloat linear forwards;
 
@@ -1196,7 +1196,7 @@ button{
     background:
 
     radial-gradient(circle,
-    rgba(231,84,128,.22),
+    rgba(231,84,128,0.22),
     transparent 70%);
 
     top:-150px;
@@ -1330,7 +1330,7 @@ justify-content:center;
     border-radius:25px;
     padding:60px;
     position:relative;
-    box-shadow:0 25px 60px rgba(0,0,0,.30);
+    box-shadow:0 25px 60px rgba(0,0,0,0.30);
     overflow:hidden;
 }
 
@@ -1363,7 +1363,7 @@ justify-content:center;
     align-items:center;
     font-size:30px;
     color:#fff;
-    box-shadow:0 10px 20px rgba(0,0,0,.25);
+    box-shadow:0 10px 20px rgba(0,0,0,0.25);
 }
 
 .letter-content{
@@ -1410,7 +1410,7 @@ justify-content:center;
 
     width:330px;
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.08);
     border:1px solid rgba(255,255,255,.12);
     backdrop-filter:blur(18px);
 
@@ -1424,7 +1424,7 @@ justify-content:center;
 
     transition:.45s;
 
-    box-shadow:0 20px 45px rgba(0,0,0,.22);
+    box-shadow:0 20px 45px rgba(0,0,0,0.22);
 
 }
 
@@ -1466,11 +1466,11 @@ justify-content:center;
 
     transform:translateY(-35px);
 
-    border:2px solid rgba(255,209,102,.45);
+    border:2px solid rgba(255,209,102,0.45);
 
     box-shadow:
-        0 25px 55px rgba(0,0,0,.35),
-        0 0 35px rgba(255,209,102,.18);
+        0 25px 55px rgba(0,0,0,0.35),
+        0 0 35px rgba(255,209,102,0.18);
 
 }
 
@@ -1495,7 +1495,7 @@ justify-content:center;
     border-radius:30px;
     font-size:.9rem;
     font-weight:600;
-    box-shadow:0 8px 18px rgba(0,0,0,.25);
+    box-shadow:0 8px 18px rgba(0,0,0,0.25);
 }
 
 /*=========================================================
@@ -1631,12 +1631,12 @@ justify-content:center;
 }
 
 .timeline-content{
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.08);
     backdrop-filter:blur(16px);
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,0.15);
     border-radius:22px;
     padding:30px;
-    box-shadow:0 18px 40px rgba(0,0,0,.25);
+    box-shadow:0 18px 40px rgba(0,0,0,0.25);
     transition:.4s;
 }
 
@@ -1710,21 +1710,21 @@ justify-content:center;
 .letter-card{
     width:100%;
     max-width:320px;
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.08);
     backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,0.15);
     border-radius:24px;
     padding:35px 25px;
     text-align:center;
     cursor:pointer;
     transition:.35s;
-    box-shadow:0 15px 35px rgba(0,0,0,.20);
+    box-shadow:0 15px 35px rgba(0,0,0,0.20);
 }
 
 
 .letter-card:hover{
     transform:translateY(-10px) scale(1.04);
-    background:rgba(255,255,255,.13);
+    background:rgba(255,255,255,0.13);
 }
 
 .letter-card span{
@@ -1747,7 +1747,7 @@ justify-content:center;
 .letter-modal{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.75);
+    background:rgba(0,0,0,0.75);
     display:none;
     justify-content:center;
     align-items:center;
@@ -1766,7 +1766,7 @@ justify-content:center;
     max-height:85vh;
     overflow-y:auto;
     animation:popup .35s ease;
-    box-shadow:0 25px 60px rgba(0,0,0,.35);
+    box-shadow:0 25px 60px rgba(0,0,0,0.35);
 }
 
 @keyframes popup{
@@ -1870,7 +1870,7 @@ justify-content:center;
 
     color:#444;
 
-    box-shadow:0 25px 60px rgba(0,0,0,.30);
+    box-shadow:0 25px 60px rgba(0,0,0,0.30);
 
     position:relative;
 
@@ -1890,7 +1890,7 @@ justify-content:center;
     repeating-linear-gradient(
         transparent,
         transparent 34px,
-        rgba(0,0,0,.04) 35px
+        rgba(0,0,0,0.04) 35px
     );
 
     pointer-events:none;
@@ -2001,11 +2001,11 @@ justify-content:center;
 
 .quality-card{
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.08);
 
     backdrop-filter:blur(16px);
 
-    border:1px solid rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,0.12);
 
     border-radius:24px;
 
@@ -2065,8 +2065,8 @@ justify-content:center;
 
     background:linear-gradient(
         135deg,
-        rgba(255,255,255,.10),
-        rgba(255,255,255,.05)
+        rgba(255,255,255,0.10),
+        rgba(255,255,255,0.05)
     );
 
     border-radius:20px;
@@ -2079,7 +2079,7 @@ justify-content:center;
 
     line-height:1.8;
 
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,0.15);
 
     transition:.35s;
 
@@ -2121,7 +2121,7 @@ justify-content:center;
 
     padding:35px 25px;
 
-    border:1px solid rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,0.12);
 
     transition:.35s;
 
@@ -2169,11 +2169,11 @@ justify-content:center;
 
 .dream-item{
 
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.08);
 
     backdrop-filter:blur(15px);
 
-    border:1px solid rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,0.12);
 
     border-radius:18px;
 
@@ -2273,9 +2273,9 @@ grid-template-columns:1fr;
 }
 
 .time-card{
-    background:rgba(255,255,255,.08);
+    background:rgba(255,255,255,0.08);
     backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,0.15);
     border-radius:25px;
     padding:35px;
     text-align:center;

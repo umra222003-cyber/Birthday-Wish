@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Pawan ❤️</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <!-- QR Code Library -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+</head>
+
+<body>
+
+<!-- =========================================================
+                        BACKGROUND MUSIC
+========================================================== -->
+
+<audio id="bgMusic" loop>
+
+    <source src="music/Our Song.mp3" type="audio/mpeg">
+            type="audio/mpeg">
+
+</audio>
+
+
+<!-- =========================================================
+                        COUNTDOWN SCREEN
+========================================================== -->
+
+<div id="loading-screen">
+
+    <div class="loader-content">
+
+        <h1>❤️</h1>
+
+        <h2>
+
+            Something Special is locked until 👇
+
+        </h2>
+
+        <div id="countdown">
+
+            <div class="count-box">
+
+                <span id="days">00</span>
+
+                <small>Days</small>
+
+            </div>
+
+            <div class="count-box">
+
+                <span id="hours">00</span>
+
+                <small>Hours</small>
+
+            </div>
+
+            <div class="count-box">
+
+                <span id="minutes">00</span>
+
+                <small>Minutes</small>
+
+            </div>
+
+            <div class="count-box">
+
+                <span id="seconds">00</span>
+
+                <small>Seconds</small>
+
+            </div>
+
+        </div>
+
+        <p id="loadingMessage">
+
+            Waiting for the perfect moment...
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+                    WELCOME ENVELOPE
+========================================================== -->
+
+<section id="welcomeScreen">
+
+    <div class="stars"></div>
+
+    <div class="envelope-container">
+
+        <div class="envelope" id="envelope">
+
+            <div class="flap"></div>
+
+            <div class="letter">
+
+                <h2>
+
+                    For Someone Very Special ❤️
+
+                </h2>
+
+                <p>
+
+                    Before opening your birthday surprise...
+
+                </p>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter Password">
+
+                <button id="unlockBtn">
+
+                    Unlock My Surprise ❤️
+
+                </button>
+
+                <p id="error"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                    MAIN WEBSITE
+========================================================== -->
+
+<div id="mainWebsite">
+
+<!-- Floating Hearts -->
+
+<div class="hearts"></div>
+
+<!-- =========================================================
+                        NAVIGATION
+========================================================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+        ❤️ Pawan
+    </div>
+
+    <nav>
+
+        <a href="#love-letter">Letter</a>
+
+        <a href="#gallery">Gallery</a>
+
+        <a href="#timeline">Journey</a>
+
+        <a href="#reasons">Reasons</a>
+
+        <a href="#gift">Surprise</a>
+
+        <a href="#qr-share">Share</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+                        HERO SECTION
+========================================================== -->
+
+<section class="hero" id="hero">
+
+    <div class="hero-content fade-up">
+
+        <h3 class="hero-subtitle">
+
+            Every heartbeat led me here...
+
+        </h3>
+
+        <h1 class="hero-title">
+
+            Happy Birthday
+
+            <span class="hero-name">
+
+                Pawan ❤️
+
+            </span>
+
+        </h1>
+
+        <p class="hero-text">
+
+            Today is not just another birthday.
+
+            It's a celebration of the incredible person you are,
+
+            the strength you've shown,
+
+            the dreams you're chasing,
+
+            and the happiness you bring into the lives of everyone who loves you.
+
+            This little website is my way of reminding you
+
+            just how special you are.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+                onclick="document.getElementById('love-letter').scrollIntoView({behavior:'smooth'})">
+
+                💌 Read My Letter
+
+            </button>
+
+            <button
+                class="secondary-btn"
+                id="musicBtn">
+
+                🎵 Play Our Song
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                    SCROLL INDICATOR
+========================================================== -->
+
+<div class="scroll-down">
+
+    <span>
+
+        Scroll Down
+
+    </span>
+
+    <i class="fa-solid fa-angles-down"></i>
+
+</div>
+
+<!-- =========================================================
+                    LOVE LETTER
+========================================================== -->
+
+<section id="love-letter" class="love-letter-section fade-up">
+
+    <div class="section-title">
+
+        <h2>💌 A Letter From My Heart</h2>
+
+        <p>
+            Every word here carries a piece of my heart.
+        </p>
+
+    </div>
+
+    <div class="letter-paper">
+
+        <div class="letter-top">
+
+            <span class="wax-seal">❤️</span>
+
+        </div>
+
+        <div class="letter-content">
+
+            <p>
+
+                <strong>Dear Pawan,</strong>
+
+            </p>
+
+            <p>
+
+                Happy Birthday to the strongest, kindest and most beautiful soul I know.
+
+            </p>
+
+            <p>
+
+                Life has tested you from your childhood, through your teenage years,
+                and in ways many people will never truly understand.
+
+                Yet somehow...
+
+                you chose kindness over anger,
+
+                hope over fear,
+
+                and love over everything else.
+
+            </p>
+
+            <p>
+
+                One of the things I admire most is the way you care for the people you love.
+
+                Whether it's your parents,
+
+                your family,
+
+                your friends,
+
+                or the people lucky enough to know you—
+
+                your heart always comes first.
+
+            </p>
+
+            <p>
+
+                I smile every time I think about your shy expressions,
+
+                the way you scratch your head when you're thinking,
+
+                your excitement while playing PS5,
+
+                your love for delicious mutton, chicken and fish,
+
+                and even our silly little "Lady Fingers" joke.
+
+            </p>
+
+            <p>
+
+                Those little moments may seem ordinary to the world,
+
+                but to me,
+
+                they're priceless memories.
+
+            </p>
+
+            <p>
+
+                I truly believe that one day you'll achieve every dream you've ever shared with me—
+
+                your dream company,
+
+                your peaceful home,
+
+                a happy life with your family,
+
+                and yes...
+
+                that Land Cruiser parked proudly beside your home.
+
+            </p>
+
+            <p>
+
+                I hope this birthday reminds you how deeply you are loved,
+
+                appreciated,
+
+                respected,
+
+                and admired.
+
+            </p>
+
+            <p>
+
+                Never stop being the amazing person you are.
+
+            </p>
+
+            <br>
+
+            <h3>
+
+                Happy Birthday ❤️
+
+            </h3>
+
+            <p>
+
+                With all my love,
+
+            </p>
+
+            <h2>
+
+                Umra ❤️
+
+            </h2>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+                    JOURNEY THROUGH TIME
+========================================================== -->
+
+<section id="gallery" class="gallery-section fade-up">
+
+    <div class="section-title">
+
+        <h2>📸 A Journey Through Time</h2>
+
+        <p>
+
+            Every picture tells a story.
+            Every story led me to you.
+
+        </p>
+
+    </div>
+
+    <div class="gallery-container">
+
+        <!-- Childhood -->
+
+        <div class="photo-card childhood">
+
+            <div class="photo-frame">
+
+                <img
+                    src="photos/childhood.jpg"
+                    alt="Childhood">
+
+            </div>
+
+            <div class="photo-caption">
+
+                <h3>👶 Childhood</h3>
+
+                <p>
+
+                    The little warrior who never gave up.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Current -->
+
+        <div class="photo-card current featured">
+
+            <div class="featured-badge">
+
+                ⭐ Present Day
+
+            </div>
+
+            <div class="photo-frame">
+
+                <img
+                    src="photos/current.jpg"
+                    alt="Current">
+
+            </div>
+
+            <div class="photo-caption">
+
+                <h3>💙 Today</h3>
+
+                <p>
+
+                    The strongest, kindest and most inspiring man I know.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Us -->
+
+        <div class="photo-card us">
+
+            <div class="photo-frame">
+
+                <img
+                    src="photos/us.jpg"
+                    alt="Us">
+
+            </div>
+
+            <div class="photo-caption">
+
+                <h3>❤️ Us</h3>
+
+                <p>
+
+                    My favourite chapter...
+                    and only the beginning of our beautiful story.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+                    LIFE JOURNEY
+========================================================== -->
+
+<section id="timeline" class="timeline-section fade-up">
+
+    <div class="section-title">
+
+        <h2>❤️ Your Journey So Far</h2>
+
+        <p>
+
+            Every chapter shaped the incredible person you are today.
+
+        </p>
+
+    </div>
+
+    <div class="timeline">
+
+        <!-- 1 -->
+
+        <div class="timeline-item left">
+
+            <div class="timeline-content">
+
+                <span class="timeline-icon">👶</span>
+
+                <h3>Childhood</h3>
+
+                <p>
+
+                    A little boy with a beautiful heart,
+                    already stronger than life expected him to be.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- 2 -->
+
+        <div class="timeline-item right">
+
+            <div class="timeline-content">
+
+                <span class="timeline-icon">💙</span>
+
+                <h3>The Brave Fighter</h3>
+
+                <p>
+
+                    Through childhood and teenage years,
+                    you faced health challenges that could have broken anyone.
+
+                    Instead...
+
+                    they made you stronger.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- 3 -->
+
+        <div class="timeline-item left">
+
+            <div class="timeline-content">
+
+                <span class="timeline-icon">🌱</span>
+
+                <h3>Growing Into Yourself</h3>
+
+                <p>
+
+                    Every struggle slowly shaped you into
+                    the kind, humble and resilient man you are today.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- 4 -->
+
+        <div class="timeline-item right">
+
+            <div class="timeline-content">
+
+                <span class="timeline-icon">👨‍👩‍👦</span>
+
+                <h3>Family First</h3>
+
+                <p>
+
+                    No matter what happened,
+                    your parents always remained your greatest priority.
+
+                    Their happiness became your strength.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- 5 -->
+
+        <div class="timeline-item left">
+
+            <div class="timeline-content">
+
+                <span class="timeline-icon">❤️</span>
+
+                <h3>Our Story Began</h3>
+
+                <p>
+
+                    Somewhere along the journey,
+
+                    our paths crossed.
+
+                    One beautiful chapter became
+
+                    "Us."
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- 6 -->
+
+        <div class="timeline-item right">
+
+            <div class="timeline-content">
+
+                <span class="timeline-icon">🏢</span>
+
+                <h3>Dreams & Ambitions</h3>
+
+                <p>
+
+                    Building your career,
+
+                    chasing your dream company,
+
+                    working every day for a brighter future.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- 7 -->
+
+        <div class="timeline-item left">
+
+            <div class="timeline-content">
+
+                <span class="timeline-icon">🚙</span>
+
+                <h3>Dream Life</h3>
+
+                <p>
+
+                    One day...
+
+                    a peaceful home,
+
+                    a Land Cruiser,
+
+                    a Fortuner,
+
+                    with your family happily together,
+
+                    and a heart full of happiness.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- 8 -->
+
+        <div class="timeline-item right">
+
+            <div class="timeline-content">
+
+                <span class="timeline-icon">🎂</span>
+
+                <h3>Today</h3>
+
+                <p>
+
+                    Today isn't just another birthday.
+
+                    It's another year of becoming
+                    an even more incredible person.
+
+                    And this story...
+
+                    is only just beginning.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+                    OPEN WHEN...
+========================================================== -->
+
+<section id="open-when" class="open-when-section fade-up">
+
+    <div class="section-title">
+
+        <h2>💌 Open When...</h2>
+
+        <p>
+
+            No matter where life takes you,
+            these little letters will always be waiting for you.
+
+        </p>
+
+    </div>
+
+    <div class="letters-grid">
+
+        <!-- Letter 1 -->
+
+        <div class="letter-card" onclick="openLetter(0)">
+
+            <span>💙</span>
+
+            <h3>Open When You Miss Me</h3>
+
+        </div>
+
+        <!-- Letter 2 -->
+
+        <div class="letter-card" onclick="openLetter(1)">
+
+            <span>🌧️</span>
+
+            <h3>Open When Life Gets Hard</h3>
+            
+
+        </div>
+
+        <!-- Letter 3 -->
+
+        <div class="letter-card" onclick="openLetter(2)">
+
+            <span>😂</span>
+
+            <h3>Open When You Need a Smile</h3>
+            
+
+        </div>
+
+        <!-- Letter 4 -->
+
+        <div class="letter-card" onclick="openLetter(3)">
+
+            <span>🌟</span>
+
+            <h3>Open When You Doubt Yourself</h3>
+            
+
+        </div>
+
+        <!-- Letter 5 -->
+
+        <div class="letter-card" onclick="openLetter(4)">
+
+            <span>🎮</span>
+
+            <h3>Open After a Long PS5 Session</h3>
+            
+        </div>
+
+        <!-- Letter 6 -->
+
+        <div class="letter-card" onclick="openLetter(5)">
+
+            <span>🎂</span>
+
+            <h3>Open On Your Birthday</h3>
+            
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+                    LETTER POPUP
+========================================================== -->
+
+<div id="letterModal" class="letter-modal">
+
+    <div class="letter-popup">
+
+        <button class="close-btn" onclick="closeLetter()">
+
+            ✖
+
+        </button>
+
+        <div id="letterContent">
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================================================
+                    69 REASONS
+========================================================== -->
+
+<section id="reasons" class="reasons-section fade-up">
+
+    <div class="section-title">
+
+        <h2>❤️ 69 Reasons Why You're Amazing ❤️</h2>
+
+        <p>
+
+            There are countless reasons why you mean so much to me.
+            Here are sixty-nine of my favourites.
+
+        </p>
+
+    </div>
+
+    <div class="reason-book">
+
+        <div class="reason-header">
+
+            <span id="reasonCount">
+
+                Reason 1 of 69
+
+            </span>
+
+        </div>
+
+        <div id="loveReason">
+
+            Click below to begin ❤️
+
+        </div>
+
+        <div class="reason-buttons">
+
+            <button id="prevReason">
+
+                ⬅ Previous
+
+            </button>
+
+            <button id="nextReason">
+
+                Next ➜
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================================
+                BEST QUALITIES
+========================================================== -->
+
+<section id="qualities" class="qualities-section fade-up">
+
+    <div class="section-title">
+        <h2>🌟 Things I Admire About You</h2>
+        <p>The little things that make you extraordinary.</p>
+    </div>
+
+    <div class="qualities-grid">
+
+        <div class="quality-card">
+            <span>❤️</span>
+            <h3>Kind Heart</h3>
+            <p>You always care about the mental and physical well-being of the people you love.</p>
+        </div>
+
+        <div class="quality-card">
+            <span>💪</span>
+            <h3>Strong Fighter</h3>
+            <p>Your childhood and teenage struggles made you stronger, not bitter.</p>
+        </div>
+
+        <div class="quality-card">
+            <span>👨‍👩‍👦</span>
+            <h3>Family First</h3>
+            <p>Your parents have always been your greatest priority.</p>
+        </div>
+
+        <div class="quality-card">
+            <span>😊</span>
+            <h3>Pure Soul</h3>
+            <p>Your kindness makes everyone around you feel safe and loved.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                FUNNY HABITS
+========================================================== -->
+
+<section id="habits" class="fun-section fade-up">
+
+    <div class="section-title">
+        <h2>😂 Your Cute Little Habits</h2>
+    </div>
+
+    <div class="fun-grid">
+
+        <div class="fun-card">
+            🤭 Scratching your head whenever you're confused.
+        </div>
+
+        <div class="fun-card">
+            😳 Those adorable shy expressions.
+        </div>
+
+        <div class="fun-card">
+            🎮 Losing track of time while playing PS5.
+        </div>
+
+        <div class="fun-card">
+            🍗 Instantly smiling when food arrives.
+        </div>
+
+        <div class="fun-card">
+            😂 The legendary "Lady Fingers" joke.
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                THINGS YOU LOVE
+========================================================== -->
+
+<section id="favorites" class="favorites-section fade-up">
+
+    <div class="section-title">
+        <h2>🍗 Things You Love</h2>
+    </div>
+
+    <div class="favorites-grid">
+
+        <div class="favorite-card">
+            🎮
+            <h3>Gaming</h3>
+            <p>Especially your PS5 adventures.</p>
+        </div>
+
+        <div class="favorite-card">
+            🍖
+            <h3>Food</h3>
+            <p>Mutton, Chicken & Fish always win.</p>
+        </div>
+
+        <div class="favorite-card">
+            👨‍👩‍👦
+            <h3>Family</h3>
+            <p>Nothing matters more than their happiness.</p>
+        </div>
+
+        <div class="favorite-card">
+            ❤️
+            <h3>Love</h3>
+            <p>Cherishing every little moment together.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+                RELATIONSHIP TIMER
+========================================================== -->
+
+<section id="relationship" class="relationship-section fade-up">
+
+    <div class="section-title">
+
+        <h2>⏳ Our Journey Together</h2>
+
+        <p>Every second with you is my favourite memory.</p>
+
+    </div>
+
+    <div class="timer-box">
+
+        <div class="time-card">
+            <span id="years">0</span>
+            <small>Years</small>
+        </div>
+
+        <div class="time-card">
+            <span id="months">0</span>
+            <small>Months</small>
+        </div>
+
+        <div class="time-card">
+            <span id="daysTogether">0</span>
+            <small>Days</small>
+        </div>
+
+        <div class="time-card">
+            <span id="hoursTogether">0</span>
+            <small>Hours</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                    LOVE QUOTE
+========================================================== -->
+
+<section class="quote-section fade-up">
+
+    <blockquote>
+
+        "Some people search their whole lives for a reason to smile...
+
+        I found mine in you."
+
+    </blockquote>
+
+</section>
+<!-- =========================================================
+                    BIRTHDAY SURPRISE
+========================================================== -->
+
+<section id="gift" class="gift-section fade-up">
+
+    <div class="section-title">
+
+        <h2>🎁 Your Final Birthday Surprise</h2>
+
+        <p>
+
+            You've reached the end...
+
+            or maybe,
+
+            the beginning of another beautiful chapter.
+
+        </p>
+
+    </div>
+
+    <div class="gift-box-container">
+
+    <div id="giftBox" class="gift-box">
+        🎁
+    </div>
+
+    <button id="openGiftBtn">
+        Open Your Gift ❤️
+    </button>
+
+    <!-- Hidden Surprise -->
+    <div id="giftSurprise" class="gift-surprise">
+
+        <h1>🎉 Happy Birthday Pawan ❤️</h1>
+
+        <p>
+     And yes, I do love you from the bottom of my heart ❤️
+            You've unlocked the final surprise! I hope this little website brought a smile to your face and warmth to your heart.
+    
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================================
+                    RAGNAROK
+========================================================== -->
+
+<section id="ragnarok" class="ragnarok-section fade-up">
+
+    <div class="section-title">
+
+        <h2>⚔️ Guardian's Blessing</h2>
+
+    </div>
+
+    <div id="guardianMessage" class="guardian-text">
+
+        <p>
+
+            Like the heroes who never surrendered despite impossible battles,
+
+            you've faced every challenge with courage.
+
+        </p>
+
+        <p>
+
+            May your strength continue to protect those you love,
+
+            your wisdom guide every step,
+
+            and your heart always remain as kind as it is today.
+
+        </p>
+
+        <h3>
+
+            "May your journey always be guided by courage, hope, and love."
+
+        </h3>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+                    FINAL LETTER
+========================================================== -->
+
+<section id="final-letter" class="final-letter-section fade-up">
+
+    <div class="section-title">
+
+        <h2>💌 One Last Letter</h2>
+
+        <p>Before you leave, there's one more thing I want to tell you...</p>
+
+    </div>
+
+    <div class="final-letter-card">
+
+        <p class="typewriter" id="typewriter">
+
+            Dear Pawan,
+
+            Thank you for being the person you are.
+
+            Thank you for fighting battles that nobody saw.
+
+            Thank you for choosing kindness every single day.
+
+            Thank you for loving your family with all your heart.
+
+            Thank you for making me smile, laugh and believe in beautiful tomorrows.
+
+            I know life won't always be easy,
+            but I also know you'll overcome every challenge just like you always have.
+
+            I hope one day we look back at this website together,
+            smile at these memories,
+            and realize this was only the beginning of countless birthdays we'll celebrate.
+
+            Until then...
+
+            Never forget how deeply you are loved.
+
+            Happy Birthday, my favourite person.
+
+            ❤️
+
+            — With all my love,
+            Umra
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                    ONE LAST SECRET
+========================================================== -->
+
+<section id="secret" class="secret-section fade-up">
+
+    <div id="secretMessage" class="secret-box">
+
+        <h2>❤️ One Last Thing...</h2>
+
+        <p>
+
+            If you've reached here...
+
+            it means you've travelled through every memory,
+            every smile,
+            every dream,
+            and every little piece of my heart that I wanted to share with you.
+
+        </p>
+
+        <p>
+
+            No matter what tomorrow brings,
+            always remember...
+
+        </p>
+
+        <h3>
+
+            You are loved.
+            You are appreciated.
+            You are enough.
+            You are my favourite person.
+
+        </h3>
+
+        <button id="secretBtn">
+
+            ❤️ Click One Last Time ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                    SHARE VIA QR CODE
+========================================================== -->
+
+<section id="qr-share" class="qr-section fade-up">
+
+    <div class="section-title">
+
+        <h2>📱 Share This Birthday Surprise</h2>
+
+        <p>Scan this QR code to share my birthday website with others</p>
+
+    </div>
+
+    <div class="qr-container">
+
+        <div id="qrCode" class="qr-code-box"></div>
+
+        <p class="qr-instruction">Point your phone camera at the QR code to open this website</p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+                        FOOTER
+========================================================== -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <h2>
+
+            Happy Birthday, Pawan ❤️
+
+        </h2>
+
+        <p>
+
+            Made with endless love,
+            countless memories,
+            and every heartbeat in between.
+
+        </p>
+
+       
+    </div>
+
+</footer>
+
+
+
+</div>
+
+<!-- Gift Popup -->
+
+<div id="giftPopup" class="gift-popup">
+
+    <div class="gift-box">
+
+        <div class="gift-top-hearts">
+            ❤️ 💖 💕 💝 ❤️
+        </div>
+
+        <h2>🎂 Happy Birthday Pawan ❤️</h2>
+
+        <p class="gift-text">
+
+            May this year bring you...
+
+        </p>
+
+        <ul>
+
+            <li>💖 Good Health</li>
+
+            <li>🏡 A Home Filled With Love</li>
+
+            <li>🎒 An Adventurous Journey</li>
+
+            <li>🌆 A Successful Life</li>
+
+            <li>✨ Endless Happiness</li>
+
+        </ul>
+
+        <h3>
+
+            And yes...
+
+            I Love You Forever ❤️
+
+        </h3>
+
+        <button onclick="closeGiftPopup()">
+
+            Continue ❤️
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ===============================
+        Gift Experience
+================================ -->
+
+<div id="giftExperience" class="gift-overlay">
+
+    <div id="giftBox" class="gift-container">
+
+        <div class="gift-lid"></div>
+
+        <div class="gift-base"></div>
+
+        <div class="gift-ribbon-vertical"></div>
+
+        <div class="gift-ribbon-horizontal"></div>
+
+        <div class="gift-tag">
+
+            🎁 Click To Open
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    const targetTime = Date.now() + 5000;
+</script>
+
+<script src="script.js"></script>
+
+
+<script src="script.js" defer></script>
+
+</body>
+
+</html>

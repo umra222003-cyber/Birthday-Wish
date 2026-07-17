@@ -1244,8 +1244,7 @@ console.log("3. Thunder started");
 
     // Type the subtitle
     await typeGuardianText(
-        "Greetings... traveler.\n\nBeyond this gate lies a journey created with memories, patience and love.\n\nWelcome, Pawan.\n\nYour adventure begins now."
-    );
+"Who dares awaken the Hall of Memories?.\n\nI have watched countless warriors...\n\nYet today, I witness something greater than strength.\n\nPawan...\n\nBeyond these gates lies a gift forged not by gods...\n\n...but by a heart that cherishes you deeply.\n\nProceed.\n\nYour journey awaits."    );
 
     // Wait until the voice finishes
     await new Promise(resolve => {

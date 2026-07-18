@@ -2359,33 +2359,6 @@ grid-template-columns:1fr;
     font-weight:700;
 }
 
-/*=========================================================
-                RAGNAROK SECTION
-=========================================================*/
-
-.ragnarok-section{
-    text-align:center;
-}
-
-.guardian-text{
-    max-width:900px;
-    margin:auto;
-    background:rgba(255,255,255,.08);
-    border-radius:25px;
-    padding:50px;
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.12);
-}
-
-.guardian-text p{
-    margin-bottom:25px;
-    line-height:2;
-}
-
-.guardian-text h3{
-    color:var(--gold);
-    margin-top:30px;
-}
 
 /*=========================================================
                 FINAL LETTER

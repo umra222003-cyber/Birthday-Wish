@@ -847,42 +847,6 @@ function openGiftAnimation() {
 
 }
 
-/*=========================================================
-                RAGNARÖK BLESSING
-=========================================================*/
-
-function revealGuardian() {
-
-    const guardian = document.getElementById("guardianMessage");
-
-    if (!guardian) return;
-
-    guardian.innerHTML = `
-    <h2>⚔️ A Blessing from Ragnarök ⚔️</h2>
-
-    <p>
-
-    Like Kratos,
-    you have carried pain.
-
-    Like Atreus,
-    you continue to grow.
-
-    Your past made you stronger,
-    but it will never define your future.
-
-    Walk forward with courage,
-    wisdom,
-    and love.
-
-    May every battle ahead become another victory.
-
-    ❤️
-
-    </p>
-    `;
-
-}
 
 /*=========================================================
                 TYPEWRITER EFFECT

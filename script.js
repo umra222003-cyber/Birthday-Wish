@@ -897,20 +897,46 @@ if (finalLetter) {
                 typeWriter(
                     "typewriter",
 
-`Dear Pawan,
+            `Dear Pawan,
 
-Every chapter of your life has shown me how strong,
-kind and loving you truly are.
+            For the first time, I let someone cross my boundaries.
 
-No matter what life brings,
-I hope you always remember that you are deeply loved,
-deeply appreciated,
-and never alone.
+            I broke a few of my own rules... and that someone was you.
 
-Happy Birthday ❤️
+            And honestly? I'm so glad I did.
 
-With all my love,
-Umra`
+            Because choosing you never felt like losing myself.
+            
+            It felt like finding a happier, softer, and more beautiful version of me.
+
+            Some risks are worth taking, and I would choose this one a million times over—because it brought me to you.
+
+            Thank you for being the person you are.
+
+            Thank you for fighting battles that nobody saw.
+
+            Thank you for choosing kindness every single day.
+
+            Thank you for loving your family with all your heart.
+
+            Thank you for making me smile, laugh and believe in beautiful tomorrows.
+
+            I know life won't always be easy; but I also know you'll overcome every challenge just like you always have.
+
+            I hope one day we look back at this website together, smile at these memories,
+           
+            and realize this was only the beginning of countless birthdays we'll celebrate.
+
+            Until then...
+
+            Never forget how deeply you are loved and I will always be just one approach away NO MATTER WHAT.
+
+            Happy Birthday, my favourite person.
+
+            ❤️
+
+            — With all my love,
+            Umra
                 );
 
                 observer.disconnect();

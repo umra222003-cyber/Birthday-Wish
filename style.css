@@ -3023,31 +3023,56 @@ min-height:70px;
 text-shadow:0 0 20px cyan;
 }
 
-/*=====================================
-        Journey Gallery
-=====================================*/
+/*=========================================================
+                JOURNEY IMAGE GALLERY
+=========================================================*/
 
 .journey-gallery{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:15px;
-    margin-top:25px;
-    flex-wrap:wrap;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+    margin-top:22px;
+
+}
+
+.journey-gallery.single{
+
+    display:block;
+
 }
 
 .journey-photo{
+
     width:100%;
-    max-width:320px;
-    height:320px;
+
+    height:190px;
+
     object-fit:cover;
+
     border-radius:18px;
-    border:3px solid rgba(255,255,255,.15);
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    border:2px solid rgba(255,255,255,.15);
+
+    box-shadow:0 12px 25px rgba(0,0,0,.25);
+
     transition:.35s;
+
+}
+
+.journey-gallery.single .journey-photo{
+
+    height:300px;
+
 }
 
 .journey-photo:hover{
-    transform:scale(1.05);
+
+    transform:scale(1.04);
+
     border-color:var(--gold);
+
 }

@@ -3045,72 +3045,56 @@ text-shadow:0 0 20px cyan;
 
     width:100%;
 
-    height:220px;
-
-    display:block;
+    aspect-ratio:1/1;
 
     object-fit:cover;
 
     object-position:center;
 
+    display:block;
+
     border-radius:18px;
 
-    border:2px solid rgba(255,255,255,.15);
+    border:3px solid rgba(255,255,255,.15);
 
     background:#24133d;
 
-    box-shadow:0 12px 25px rgba(0,0,0,.35);
+    box-shadow:0 15px 30px rgba(0,0,0,.35);
 
     transition:.35s;
 
 }
 
+.journey-gallery img:nth-child(1){
+
+    transform:rotate(-2deg);
+
+}
+
+.journey-gallery img:nth-child(2){
+
+    transform:rotate(2deg);
+
+}
+
+.journey-gallery img:nth-child(3){
+
+    transform:rotate(-3deg);
+
+}
+
+.journey-gallery img:nth-child(4){
+
+    transform:rotate(2deg);
+
+}
+
 .journey-gallery img:hover{
 
-    transform:scale(1.04);
+    transform:scale(1.06) rotate(0deg);
 
     border-color:var(--gold);
 
-}
-
-/* First card only */
-
-.timeline-item:first-child .journey-gallery{
-
-    display:block;
+    z-index:10;
 
 }
-
-.timeline-item:first-child .journey-gallery img{
-
-    width:100%;
-
-    height:340px;
-
-}
-
-@media(max-width:768px){
-
-.journey-gallery{
-
-    grid-template-columns:1fr;
-
-}
-
-.journey-gallery img{
-
-    height:260px;
-
-}
-
-.timeline-item:first-child .journey-gallery img{
-
-    height:280px;
-
-}
-
-}
-
-
-
-

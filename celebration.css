@@ -1426,76 +1426,911 @@
 }
 
 /* ==========================================================
-   BIRTHDAY MODULE
+   CELEBRATION.CSS
+   PART 2B.2
+   PANDA SCREEN LAYOUT
 ========================================================== */
 
-.birthday-screen{
+
+/* ==========================================================
+   PANDA SCREEN
+========================================================== */
+
+#screenPanda{
+
+    background:transparent;
+
+}
+
+
+/* ==========================================================
+   PANDA WRAPPER
+========================================================== */
+
+.panda-wrapper{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:1200px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+    z-index:20;
+
+}
+
+
+/* ==========================================================
+   PANDA IMAGE
+========================================================== */
+
+.panda-image{
+
+    width:min(560px,80vw);
+
+    height:auto;
+
+    object-fit:contain;
+
+    animation:
+
+        pandaEntrance 1.2s ease forwards,
+
+        pandaFloat 4s ease-in-out infinite;
+
+    filter:
+
+        drop-shadow(0 0 12px rgba(255,255,255,.25))
+
+        drop-shadow(0 0 28px rgba(255,79,163,.35));
+
+}
+
+
+/* ==========================================================
+   PANDA TITLE
+========================================================== */
+
+.panda-wrapper h2{
+
+    margin-top:35px;
+
+    max-width:820px;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:2.2rem;
+
+    font-weight:600;
+
+    line-height:1.5;
+
+    color:#ffffff;
+
+    text-align:center;
+
+    text-shadow:
+
+        0 0 12px rgba(255,255,255,.25),
+
+        0 0 20px rgba(255,79,163,.20);
+
+    opacity:0;
+
+    animation:
+
+        pandaTextIn 1s ease .6s forwards;
+
+}
+
+
+/* ==========================================================
+   GLOW BEHIND PANDA
+========================================================== */
+
+.panda-wrapper::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    border-radius:50%;
 
     background:
-    radial-gradient(circle at center,
-    rgba(255,255,255,.05),
-    transparent 70%);
+
+        radial-gradient(circle,
+
+        rgba(255,79,163,.20),
+
+        transparent 72%);
+
+    filter:blur(18px);
+
+    animation:
+
+        pandaGlow 5s ease-in-out infinite;
+
+    z-index:-2;
 
 }
 
-.birthday-wrapper{
 
-    animation:birthdayScene 5s ease forwards;
+/* ==========================================================
+   OUTER RING
+========================================================== */
+
+.panda-wrapper::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+
+    height:650px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    animation:
+
+        pandaRing 7s linear infinite;
+
+    z-index:-3;
 
 }
 
-@keyframes birthdayScene{
+
+/* ==========================================================
+   LITTLE HEARTS
+========================================================== */
+
+.panda-heart{
+
+    position:absolute;
+
+    color:#ff7dbb;
+
+    font-size:22px;
+
+    opacity:0;
+
+    animation:
+
+        pandaHeartFloat 5s linear infinite;
+
+    pointer-events:none;
+
+}
+
+.panda-heart.one{
+
+    left:22%;
+
+    top:60%;
+
+    animation-delay:0s;
+
+}
+
+.panda-heart.two{
+
+    right:20%;
+
+    top:55%;
+
+    animation-delay:1.5s;
+
+}
+
+.panda-heart.three{
+
+    left:48%;
+
+    top:68%;
+
+    animation-delay:3s;
+
+}
+
+
+/* ==========================================================
+   PANDA ANIMATIONS
+========================================================== */
+
+@keyframes pandaEntrance{
 
     0%{
 
         opacity:0;
-        transform:scale(.8);
+
+        transform:
+
+            scale(.65)
+
+            translateY(80px);
 
     }
 
-    15%{
+    100%{
 
         opacity:1;
-        transform:scale(1);
+
+        transform:
+
+            scale(1)
+
+            translateY(0);
 
     }
 
-    80%{
+}
+
+
+@keyframes pandaFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+@keyframes pandaTextIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
 
         opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+@keyframes pandaGlow{
+
+    0%{
+
+        transform:scale(.90);
+
+        opacity:.35;
+
+    }
+
+    50%{
+
         transform:scale(1);
+
+        opacity:.60;
+
+    }
+
+    100%{
+
+        transform:scale(.90);
+
+        opacity:.35;
+
+    }
+
+}
+
+
+@keyframes pandaRing{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes pandaHeartFloat{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+
+            translateY(0)
+
+            scale(.6);
+
+    }
+
+    20%{
+
+        opacity:1;
 
     }
 
     100%{
 
         opacity:0;
-        transform:scale(1.05);
+
+        transform:
+
+            translateY(-140px)
+
+            scale(1.3);
 
     }
 
 }
 
-.birthday-title{
 
-    animation:
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
 
-    birthdayZoom 1s ease,
+@media (max-width:900px){
 
-    birthdayGlow 2.5s infinite;
+    .panda-image{
+
+        width:min(430px,86vw);
+
+    }
+
+    .panda-wrapper h2{
+
+        font-size:1.7rem;
+
+    }
 
 }
 
-.birthday-name{
 
-    animation:
+@media (max-width:600px){
 
-    birthdayFadeUp 1.2s ease .5s forwards,
+    .panda-wrapper{
 
-    pulseSoft 2s infinite;
+        padding:20px;
+
+    }
+
+    .panda-image{
+
+        width:90vw;
+
+    }
+
+    .panda-wrapper h2{
+
+        font-size:1.35rem;
+
+        line-height:1.6;
+
+        margin-top:25px;
+
+    }
+
+    .panda-wrapper::before{
+
+        width:340px;
+
+        height:340px;
+
+    }
+
+    .panda-wrapper::after{
+
+        width:420px;
+
+        height:420px;
+
+    }
 
 }
 
+/* ==========================================================
+   CELEBRATION.CSS
+   PART 2B.3
+   PANDA EFFECTS & DECORATIONS
+========================================================== */
+
+
+/* ==========================================================
+   PANDA SHADOW
+========================================================== */
+
+.panda-image{
+
+    transform-origin:center bottom;
+
+}
+
+.panda-shadow{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    width:260px;
+
+    height:36px;
+
+    transform:translateX(-50%);
+
+    background:rgba(0,0,0,.35);
+
+    border-radius:50%;
+
+    filter:blur(18px);
+
+    animation:
+
+        pandaShadowFloat 4s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   PANDA SPARKLES
+========================================================== */
+
+.panda-sparkle{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    box-shadow:
+
+        0 0 8px #ffffff,
+
+        0 0 18px #ffffff,
+
+        0 0 28px rgba(255,255,255,.8);
+
+    animation:
+
+        pandaSparkle 2.6s ease-in-out infinite;
+
+}
+
+.panda-sparkle:nth-child(1){
+
+    top:15%;
+
+    left:22%;
+
+    animation-delay:0s;
+
+}
+
+.panda-sparkle:nth-child(2){
+
+    top:28%;
+
+    right:20%;
+
+    animation-delay:.5s;
+
+}
+
+.panda-sparkle:nth-child(3){
+
+    top:60%;
+
+    left:16%;
+
+    animation-delay:1s;
+
+}
+
+.panda-sparkle:nth-child(4){
+
+    top:68%;
+
+    right:18%;
+
+    animation-delay:1.5s;
+
+}
+
+.panda-sparkle:nth-child(5){
+
+    top:42%;
+
+    left:50%;
+
+    animation-delay:2s;
+
+}
+
+
+/* ==========================================================
+   FLOATING LOVE PARTICLES
+========================================================== */
+
+.love-particle{
+
+    position:absolute;
+
+    bottom:-30px;
+
+    font-size:18px;
+
+    color:#ff78bb;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    animation:
+
+        loveParticleFloat linear forwards;
+
+}
+
+
+/* ==========================================================
+   GLOW ORBS
+========================================================== */
+
+.panda-orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(12px);
+
+    opacity:.45;
+
+    animation:
+
+        orbDrift 12s linear infinite;
+
+}
+
+.panda-orb.one{
+
+    width:120px;
+
+    height:120px;
+
+    background:rgba(255,79,163,.30);
+
+    left:12%;
+
+    top:22%;
+
+}
+
+.panda-orb.two{
+
+    width:150px;
+
+    height:150px;
+
+    background:rgba(255,213,79,.20);
+
+    right:10%;
+
+    top:16%;
+
+}
+
+.panda-orb.three{
+
+    width:90px;
+
+    height:90px;
+
+    background:rgba(120,180,255,.22);
+
+    left:48%;
+
+    bottom:15%;
+
+}
+
+
+/* ==========================================================
+   PANDA TEXT GLOW
+========================================================== */
+
+.panda-wrapper h2{
+
+    animation:
+
+        pandaTextIn 1s ease .6s forwards,
+
+        pandaTextGlow 3s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   KEYFRAMES
+========================================================== */
+
+@keyframes pandaShadowFloat{
+
+    0%{
+
+        transform:
+
+            translateX(-50%)
+
+            scale(1);
+
+        opacity:.30;
+
+    }
+
+    50%{
+
+        transform:
+
+            translateX(-50%)
+
+            scale(.85);
+
+        opacity:.18;
+
+    }
+
+    100%{
+
+        transform:
+
+            translateX(-50%)
+
+            scale(1);
+
+        opacity:.30;
+
+    }
+
+}
+
+
+@keyframes pandaSparkle{
+
+    0%,100%{
+
+        opacity:.2;
+
+        transform:
+
+            scale(.4)
+
+            rotate(0deg);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:
+
+            scale(1.5)
+
+            rotate(180deg);
+
+    }
+
+}
+
+
+@keyframes pandaTextGlow{
+
+    0%{
+
+        text-shadow:
+
+            0 0 8px rgba(255,255,255,.25),
+
+            0 0 18px rgba(255,79,163,.18);
+
+    }
+
+    50%{
+
+        text-shadow:
+
+            0 0 18px rgba(255,255,255,.55),
+
+            0 0 40px rgba(255,79,163,.40);
+
+    }
+
+    100%{
+
+        text-shadow:
+
+            0 0 8px rgba(255,255,255,.25),
+
+            0 0 18px rgba(255,79,163,.18);
+
+    }
+
+}
+
+
+@keyframes loveParticleFloat{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+
+            translateY(0)
+
+            translateX(0)
+
+            scale(.5);
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+
+            translateY(-240px)
+
+            translateX(var(--drift))
+
+            scale(1.4)
+
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes orbDrift{
+
+    0%{
+
+        transform:
+
+            translate(0,0);
+
+    }
+
+    25%{
+
+        transform:
+
+            translate(30px,-20px);
+
+    }
+
+    50%{
+
+        transform:
+
+            translate(-20px,-45px);
+
+    }
+
+    75%{
+
+        transform:
+
+            translate(-35px,-10px);
+
+    }
+
+    100%{
+
+        transform:
+
+            translate(0,0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL DEVICE POLISH
+========================================================== */
+
+@media (max-width:600px){
+
+    .panda-shadow{
+
+        width:180px;
+
+        height:26px;
+
+    }
+
+    .panda-orb.one{
+
+        width:80px;
+        height:80px;
+
+    }
+
+    .panda-orb.two{
+
+        width:90px;
+        height:90px;
+
+    }
+
+    .panda-orb.three{
+
+        width:70px;
+        height:70px;
+
+    }
+
+}
 
 
 

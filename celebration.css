@@ -1875,218 +1875,45 @@
 /* ==========================================================
    CELEBRATION.CSS
    PART 2B.3
-   PANDA EFFECTS & DECORATIONS
+   PANDA FINISHING EFFECTS
+   (Uses Existing HTML Only)
 ========================================================== */
 
 
 /* ==========================================================
-   PANDA SHADOW
+   IMAGE ENHANCEMENT
 ========================================================== */
 
 .panda-image{
 
-    transform-origin:center bottom;
+    transform-origin:center center;
 
-}
-
-.panda-shadow{
-
-    position:absolute;
-
-    bottom:40px;
-
-    left:50%;
-
-    width:260px;
-
-    height:36px;
-
-    transform:translateX(-50%);
-
-    background:rgba(0,0,0,.35);
-
-    border-radius:50%;
-
-    filter:blur(18px);
+    transition:transform .6s ease;
 
     animation:
 
-        pandaShadowFloat 4s ease-in-out infinite;
+        pandaEntrance 1.2s ease forwards,
+
+        pandaFloat 4s ease-in-out infinite,
+
+        pandaBreath 5s ease-in-out infinite;
 
 }
 
 
 /* ==========================================================
-   PANDA SPARKLES
+   IMAGE HOVER
 ========================================================== */
 
-.panda-sparkle{
+.panda-image:hover{
 
-    position:absolute;
-
-    width:8px;
-
-    height:8px;
-
-    border-radius:50%;
-
-    background:#ffffff;
-
-    box-shadow:
-
-        0 0 8px #ffffff,
-
-        0 0 18px #ffffff,
-
-        0 0 28px rgba(255,255,255,.8);
-
-    animation:
-
-        pandaSparkle 2.6s ease-in-out infinite;
-
-}
-
-.panda-sparkle:nth-child(1){
-
-    top:15%;
-
-    left:22%;
-
-    animation-delay:0s;
-
-}
-
-.panda-sparkle:nth-child(2){
-
-    top:28%;
-
-    right:20%;
-
-    animation-delay:.5s;
-
-}
-
-.panda-sparkle:nth-child(3){
-
-    top:60%;
-
-    left:16%;
-
-    animation-delay:1s;
-
-}
-
-.panda-sparkle:nth-child(4){
-
-    top:68%;
-
-    right:18%;
-
-    animation-delay:1.5s;
-
-}
-
-.panda-sparkle:nth-child(5){
-
-    top:42%;
-
-    left:50%;
-
-    animation-delay:2s;
+    transform:scale(1.03);
 
 }
 
 
 /* ==========================================================
-   FLOATING LOVE PARTICLES
-========================================================== */
-
-.love-particle{
-
-    position:absolute;
-
-    bottom:-30px;
-
-    font-size:18px;
-
-    color:#ff78bb;
-
-    opacity:0;
-
-    pointer-events:none;
-
-    animation:
-
-        loveParticleFloat linear forwards;
-
-}
-
-
-/* ==========================================================
-   GLOW ORBS
-========================================================== */
-
-.panda-orb{
-
-    position:absolute;
-
-    border-radius:50%;
-
-    filter:blur(12px);
-
-    opacity:.45;
-
-    animation:
-
-        orbDrift 12s linear infinite;
-
-}
-
-.panda-orb.one{
-
-    width:120px;
-
-    height:120px;
-
-    background:rgba(255,79,163,.30);
-
-    left:12%;
-
-    top:22%;
-
-}
-
-.panda-orb.two{
-
-    width:150px;
-
-    height:150px;
-
-    background:rgba(255,213,79,.20);
-
-    right:10%;
-
-    top:16%;
-
-}
-
-.panda-orb.three{
-
-    width:90px;
-
-    height:90px;
-
-    background:rgba(120,180,255,.22);
-
-    left:48%;
-
-    bottom:15%;
-
-}
-
-
-/* ==========================================================
-   PANDA TEXT GLOW
+   TEXT GLOW
 ========================================================== */
 
 .panda-wrapper h2{
@@ -2101,73 +1928,79 @@
 
 
 /* ==========================================================
+   WRAPPER GLOW
+========================================================== */
+
+.panda-wrapper{
+
+    animation:
+
+        pandaWrapperGlow 6s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   IMAGE SHADOW
+========================================================== */
+
+.panda-image{
+
+    filter:
+
+        drop-shadow(0 0 12px rgba(255,255,255,.22))
+
+        drop-shadow(0 0 26px rgba(255,79,163,.30))
+
+        drop-shadow(0 0 42px rgba(255,79,163,.18));
+
+}
+
+
+/* ==========================================================
    KEYFRAMES
 ========================================================== */
 
-@keyframes pandaShadowFloat{
+@keyframes pandaBreath{
 
     0%{
 
-        transform:
-
-            translateX(-50%)
-
-            scale(1);
-
-        opacity:.30;
+        transform:scale(1);
 
     }
 
     50%{
 
-        transform:
-
-            translateX(-50%)
-
-            scale(.85);
-
-        opacity:.18;
+        transform:scale(1.025);
 
     }
 
     100%{
 
-        transform:
-
-            translateX(-50%)
-
-            scale(1);
-
-        opacity:.30;
+        transform:scale(1);
 
     }
 
 }
 
 
-@keyframes pandaSparkle{
+@keyframes pandaWrapperGlow{
 
-    0%,100%{
+    0%{
 
-        opacity:.2;
-
-        transform:
-
-            scale(.4)
-
-            rotate(0deg);
+        filter:brightness(1);
 
     }
 
     50%{
 
-        opacity:1;
+        filter:brightness(1.08);
 
-        transform:
+    }
 
-            scale(1.5)
+    100%{
 
-            rotate(180deg);
+        filter:brightness(1);
 
     }
 
@@ -2180,9 +2013,9 @@
 
         text-shadow:
 
-            0 0 8px rgba(255,255,255,.25),
+            0 0 10px rgba(255,255,255,.20),
 
-            0 0 18px rgba(255,79,163,.18);
+            0 0 20px rgba(255,79,163,.20);
 
     }
 
@@ -2190,9 +2023,9 @@
 
         text-shadow:
 
-            0 0 18px rgba(255,255,255,.55),
+            0 0 20px rgba(255,255,255,.55),
 
-            0 0 40px rgba(255,79,163,.40);
+            0 0 45px rgba(255,79,163,.45);
 
     }
 
@@ -2200,95 +2033,9 @@
 
         text-shadow:
 
-            0 0 8px rgba(255,255,255,.25),
+            0 0 10px rgba(255,255,255,.20),
 
-            0 0 18px rgba(255,79,163,.18);
-
-    }
-
-}
-
-
-@keyframes loveParticleFloat{
-
-    0%{
-
-        opacity:0;
-
-        transform:
-
-            translateY(0)
-
-            translateX(0)
-
-            scale(.5);
-
-    }
-
-    20%{
-
-        opacity:1;
-
-    }
-
-    100%{
-
-        opacity:0;
-
-        transform:
-
-            translateY(-240px)
-
-            translateX(var(--drift))
-
-            scale(1.4)
-
-            rotate(360deg);
-
-    }
-
-}
-
-
-@keyframes orbDrift{
-
-    0%{
-
-        transform:
-
-            translate(0,0);
-
-    }
-
-    25%{
-
-        transform:
-
-            translate(30px,-20px);
-
-    }
-
-    50%{
-
-        transform:
-
-            translate(-20px,-45px);
-
-    }
-
-    75%{
-
-        transform:
-
-            translate(-35px,-10px);
-
-    }
-
-    100%{
-
-        transform:
-
-            translate(0,0);
+            0 0 20px rgba(255,79,163,.20);
 
     }
 
@@ -2296,37 +2043,20 @@
 
 
 /* ==========================================================
-   SMALL DEVICE POLISH
+   MOBILE
 ========================================================== */
 
-@media (max-width:600px){
+@media (max-width:768px){
 
-    .panda-shadow{
+    .panda-wrapper{
 
-        width:180px;
-
-        height:26px;
+        padding:24px;
 
     }
 
-    .panda-orb.one{
+    .panda-image{
 
-        width:80px;
-        height:80px;
-
-    }
-
-    .panda-orb.two{
-
-        width:90px;
-        height:90px;
-
-    }
-
-    .panda-orb.three{
-
-        width:70px;
-        height:70px;
+        width:min(360px,90vw);
 
     }
 

@@ -3602,3 +3602,16 @@ height:100%;
 border:none;
 
 }
+
+.timeline-section,
+.timeline,
+.timeline-item,
+.timeline-content{
+    display:block !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    height:auto !important;
+    overflow:visible !important;
+    transform:none !important;
+}
+

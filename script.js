@@ -822,91 +822,46 @@ if (prevBtn) {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const openGiftBtn = document.getElementById("openGiftBtn");
-    const giftOverlay = document.getElementById("giftOverlay");
     const giftBox = document.getElementById("giftBox");
-    const giftLid = document.getElementById("giftLid");
+    const giftPopup = document.getElementById("giftPopup");
+    const closeGift = document.getElementById("closeGift");
 
-    const gtaReveal = document.getElementById("gtaReveal");
+    if (!giftBox || !giftPopup) return;
 
-    const trailerBtn = document.getElementById("watchTrailerBtn");
-    const closeGiftBtn = document.getElementById("closeGiftBtn");
-
-    if (!openGiftBtn) return;
-
-    // Open overlay
-    openGiftBtn.addEventListener("click", () => {
-
-        giftOverlay.style.display = "flex";
-
-        giftBox.style.display = "block";
-
-        giftLid.style.transform = "rotate(0deg)";
-
-        gtaReveal.classList.remove("show");
-
-        gtaReveal.style.display = "none";
-
-    });
-
-    // Click gift
     giftBox.addEventListener("click", () => {
 
-        giftLid.style.transform = "rotate(-140deg)";
+        giftBox.classList.add("open");
+
+        createConfetti();
+        createHeartBlast();
 
         setTimeout(() => {
 
-            giftBox.style.display = "none";
+            giftPopup.style.display = "flex";
 
-            gtaReveal.style.display = "block";
+            const msg = document.getElementById("giftMessage");
 
-            setTimeout(() => {
+            if (msg) {
+                typeWriter(
+                    "giftMessage",
+                    "You've always dreamed of GTA VI... ❤️\n\nSo here's your Ultimate Edition Surprise.\n\nI hope one day we'll play it together. ❤️",
+                    30
+                );
+            }
 
-                gtaReveal.classList.add("show");
-
-            },100);
-
-            createConfetti();
-
-        },900);
-
-    });
-
-    // Trailer
-    trailerBtn.addEventListener("click",()=>{
-
-        window.open(
-        "https://youtu.be/QdBZY2fkU-0?si=iZ8rflSKNXQ_zhwu",
-        "_blank"
-        );
+        }, 900);
 
     });
 
-    // Close
-    closeGiftBtn.addEventListener("click",()=>{
+    if (closeGift) {
 
-        giftOverlay.style.display="none";
+        closeGift.addEventListener("click", () => {
 
-        giftBox.style.display="block";
+            giftPopup.style.display = "none";
 
-        giftLid.style.transform="rotate(0deg)";
+        });
 
-        gtaReveal.style.display="none";
-
-        gtaReveal.classList.remove("show");
-
-    });
-
-    // Close outside
-    giftOverlay.addEventListener("click",(e)=>{
-
-        if(e.target===giftOverlay){
-
-            closeGiftBtn.click();
-
-        }
-
-    });
+    }
 
 });
 

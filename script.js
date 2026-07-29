@@ -227,25 +227,33 @@ setTimeout(async () => {
 
         welcomeScreen.style.display = "none";
 
-        console.log("Guardian Intro Started");
+       /* ===========================
+   START CELEBRATION
+=========================== */
 
-await playGuardianIntro();
-console.log("1. playGuardianIntro entered");
+if (typeof startCelebration === "function") {
 
-console.log("Guardian Intro Finished");
+    console.log("Starting Celebration...");
 
-        mainWebsite.style.display = "block";
+    await startCelebration();
 
-        const music = document.getElementById("bgMusic");
+} else {
 
-        if (music) {
+    console.log("Celebration not found. Starting Guardian...");
 
-            music.play().catch(() => {});
+    await playGuardianIntro();
 
-        }
+    mainWebsite.style.display = "block";
 
-    }, 900);
+    const music = document.getElementById("bgMusic");
 
+    if (music) {
+
+        music.play().catch(() => {});
+
+    }
+
+}
 }, 700);
 
     }else{

@@ -816,34 +816,134 @@ if (prevBtn) {
 }
 
 
+/*=========================================================
+            GTA VI ULTIMATE EDITION GIFT
+=========================================================*/
+
 document.addEventListener("DOMContentLoaded", () => {
 
-    const giftButton = document.getElementById("openGiftBtn");
+    const openGiftBtn = document.getElementById("openGiftBtn");
+    const giftOverlay = document.getElementById("giftOverlay");
+    const giftBox = document.getElementById("giftBox");
+    const giftLid = document.getElementById("giftLid");
 
-    if (giftButton) {
+    const gtaReveal = document.getElementById("gtaReveal");
 
-        giftButton.addEventListener("click", openGiftAnimation);
+    const trailerBtn = document.getElementById("watchTrailerBtn");
+    const closeGiftBtn = document.getElementById("closeGiftBtn");
 
-    }
+    if (!openGiftBtn) return;
+
+    // Open overlay
+    openGiftBtn.addEventListener("click", () => {
+
+        giftOverlay.style.display = "flex";
+
+        giftBox.style.display = "block";
+
+        giftLid.style.transform = "rotate(0deg)";
+
+        gtaReveal.classList.remove("show");
+
+        gtaReveal.style.display = "none";
+
+    });
+
+    // Click gift
+    giftBox.addEventListener("click", () => {
+
+        giftLid.style.transform = "rotate(-140deg)";
+
+        setTimeout(() => {
+
+            giftBox.style.display = "none";
+
+            gtaReveal.style.display = "block";
+
+            setTimeout(() => {
+
+                gtaReveal.classList.add("show");
+
+            },100);
+
+            createConfetti();
+
+        },900);
+
+    });
+
+    // Trailer
+    trailerBtn.addEventListener("click",()=>{
+
+        window.open(
+        "https://youtu.be/QdBZY2fkU-0?si=iZ8rflSKNXQ_zhwu",
+        "_blank"
+        );
+
+    });
+
+    // Close
+    closeGiftBtn.addEventListener("click",()=>{
+
+        giftOverlay.style.display="none";
+
+        giftBox.style.display="block";
+
+        giftLid.style.transform="rotate(0deg)";
+
+        gtaReveal.style.display="none";
+
+        gtaReveal.classList.remove("show");
+
+    });
+
+    // Close outside
+    giftOverlay.addEventListener("click",(e)=>{
+
+        if(e.target===giftOverlay){
+
+            closeGiftBtn.click();
+
+        }
+
+    });
 
 });
 
-function openGiftAnimation() {
 
-    const giftBox = document.getElementById("giftBox");
-    const surprise = document.getElementById("giftSurprise");
+/*=========================================================
+                CONFETTI
+=========================================================*/
 
-    if (!giftBox || !surprise) return;
+function createConfetti(){
 
-    giftBox.style.transform = "scale(1.15) rotate(10deg)";
+    for(let i=0;i<120;i++){
 
-    setTimeout(() => {
+        const piece=document.createElement("div");
 
-        giftBox.style.display = "none";
+        piece.className="confetti";
 
-        surprise.classList.add("show");
+        piece.style.left=Math.random()*100+"vw";
 
-    }, 800);
+        piece.style.animationDelay=Math.random()*2+"s";
+
+        piece.style.background=[
+            "#FFD700",
+            "#FF4F81",
+            "#7B2CBF",
+            "#00D4FF",
+            "#7CFC00"
+        ][Math.floor(Math.random()*5)];
+
+        document.body.appendChild(piece);
+
+        setTimeout(()=>{
+
+            piece.remove();
+
+        },4500);
+
+    }
 
 }
 

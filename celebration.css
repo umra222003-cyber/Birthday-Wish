@@ -956,6 +956,478 @@
 
 }
 
+/* ==========================================================
+   CELEBRATION.CSS
+   PART 2B.1
+   HAPPY BIRTHDAY SCREEN
+========================================================== */
+
+
+/* ==========================================================
+   BIRTHDAY WRAPPER
+========================================================== */
+
+.birthday-wrapper{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    width:100%;
+
+    max-width:1200px;
+
+    padding:40px;
+
+    z-index:20;
+
+}
+
+
+/* ==========================================================
+   SUBTITLE
+========================================================== */
+
+.birthday-subtitle{
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:1.4rem;
+
+    font-weight:500;
+
+    color:#ffd54f;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:28px;
+
+    opacity:0;
+
+    animation:
+
+        birthdayFadeDown 1s ease forwards;
+
+}
+
+
+/* ==========================================================
+   HAPPY BIRTHDAY
+========================================================== */
+
+.birthday-title{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:6.5rem;
+
+    color:#ffffff;
+
+    line-height:1;
+
+    text-align:center;
+
+    text-shadow:
+
+        0 0 12px rgba(255,255,255,.6),
+
+        0 0 35px rgba(255,79,163,.45),
+
+        0 0 70px rgba(255,79,163,.25);
+
+    opacity:0;
+
+    animation:
+
+        birthdayZoom 1.2s ease .4s forwards,
+
+        birthdayGlow 3s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   NAME
+========================================================== */
+
+.birthday-name{
+
+    margin-top:18px;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:4rem;
+
+    font-weight:700;
+
+    color:#ff8fc9;
+
+    letter-spacing:2px;
+
+    text-shadow:
+
+        0 0 18px rgba(255,79,163,.7),
+
+        0 0 45px rgba(255,79,163,.45);
+
+    opacity:0;
+
+    animation:
+
+        birthdayFadeUp 1s ease .9s forwards,
+
+        pulseSoft 2.8s ease infinite;
+
+}
+
+
+/* ==========================================================
+   DECORATIVE GLOW
+========================================================== */
+
+.birthday-wrapper::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:460px;
+
+    height:460px;
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(255,79,163,.22),
+
+    transparent 70%);
+
+    filter:blur(18px);
+
+    z-index:-1;
+
+    animation:
+
+        glowRotate 18s linear infinite;
+
+}
+
+
+.birthday-wrapper::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:620px;
+
+    height:620px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    animation:
+
+        ringPulse 4s ease infinite;
+
+}
+
+
+/* ==========================================================
+   TITLE SHIMMER
+========================================================== */
+
+.birthday-title::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:120%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.65),
+
+        transparent
+
+    );
+
+    transform:skewX(-25deg);
+
+    animation:
+
+        titleShimmer 4s linear infinite;
+
+}
+
+
+/* ==========================================================
+   ANIMATIONS
+========================================================== */
+
+@keyframes birthdayFadeDown{
+
+    from{
+
+        transform:translateY(-40px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes birthdayFadeUp{
+
+    from{
+
+        transform:translateY(40px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes birthdayZoom{
+
+    from{
+
+        transform:scale(.6);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes birthdayGlow{
+
+    0%{
+
+        text-shadow:
+
+            0 0 10px white,
+
+            0 0 25px rgba(255,79,163,.4);
+
+    }
+
+    50%{
+
+        text-shadow:
+
+            0 0 25px white,
+
+            0 0 55px rgba(255,79,163,.7);
+
+    }
+
+    100%{
+
+        text-shadow:
+
+            0 0 10px white,
+
+            0 0 25px rgba(255,79,163,.4);
+
+    }
+
+}
+
+
+@keyframes pulseSoft{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.06);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+@keyframes glowRotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes ringPulse{
+
+    0%{
+
+        transform:scale(.9);
+
+        opacity:.25;
+
+    }
+
+    50%{
+
+        transform:scale(1);
+
+        opacity:.55;
+
+    }
+
+    100%{
+
+        transform:scale(.9);
+
+        opacity:.25;
+
+    }
+
+}
+
+
+@keyframes titleShimmer{
+
+    from{
+
+        left:-120%;
+
+    }
+
+    to{
+
+        left:120%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:900px){
+
+    .birthday-title{
+
+        font-size:4.8rem;
+
+    }
+
+    .birthday-name{
+
+        font-size:3rem;
+
+    }
+
+}
+
+
+@media (max-width:600px){
+
+    .birthday-wrapper{
+
+        padding:25px;
+
+    }
+
+    .birthday-subtitle{
+
+        font-size:1rem;
+
+    }
+
+    .birthday-title{
+
+        font-size:3.2rem;
+
+    }
+
+    .birthday-name{
+
+        font-size:2.2rem;
+
+    }
+
+}
+
+
+
+
 
 
 

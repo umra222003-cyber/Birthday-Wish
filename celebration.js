@@ -255,7 +255,7 @@ function startFloatingHearts(){
 
     if(!heartsContainer) return;
 
-    const timer=setInterval(()=>{
+    fireworkInterval=setInterval(()=>{
 
         const heart=document.createElement("div");
 
@@ -283,7 +283,7 @@ function startFloatingHearts(){
 
     },350);
 
-    Celebration.timers.push(timer);
+    Celebration.timers.push(fireworkInterval);
 
 }
 
@@ -404,7 +404,114 @@ function stopEffects(){
 
 }
 
+/* ==========================================================
+   CELEBRATION.JS
+   PART 3B
+   BIRTHDAY SCENE
+========================================================== */
 
+
+/* ==========================================================
+   PLAY BIRTHDAY SCENE
+========================================================== */
+
+async function playBirthdayScene(){
+
+    showScreen("birthday");
+
+    launchConfetti(300);
+
+    startFloatingHearts();
+
+    startFireworks();
+
+    animateBirthdayText();
+
+    await wait(6500);
+
+    stopFireworks();
+
+    await fadeCurrentScreen();
+
+    await playPandaScene();
+
+}
+
+
+/* ==========================================================
+   BIRTHDAY TITLE
+========================================================== */
+
+function animateBirthdayText(){
+
+    const wrapper=document.querySelector(".birthday-wrapper");
+
+    if(!wrapper) return;
+
+    wrapper.classList.remove("zoom-in");
+
+    void wrapper.offsetWidth;
+
+    wrapper.classList.add("zoom-in");
+
+}
+
+
+/* ==========================================================
+   FIREWORK CONTROL
+========================================================== */
+
+let fireworkInterval=null;
+
+function stopFireworks(){
+
+    if(fireworkInterval){
+
+        clearInterval(fireworkInterval);
+
+        fireworkInterval=null;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SCREEN FADE
+========================================================== */
+
+async function fadeCurrentScreen(){
+
+    const screen=screens[Celebration.current];
+
+    if(!screen) return;
+
+    screen.classList.remove("active");
+
+    screen.classList.add("fade-out");
+
+    await wait(900);
+
+    screen.classList.remove("fade-out");
+
+}
+
+
+/* ==========================================================
+   RESTART SUPPORT
+========================================================== */
+
+function resetBirthdayScene(){
+
+    const wrapper=document.querySelector(".birthday-wrapper");
+
+    if(wrapper){
+
+        wrapper.classList.remove("zoom-in");
+
+    }
+
+}
 
 
 

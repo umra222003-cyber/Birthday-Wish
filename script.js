@@ -841,13 +841,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const msg = document.getElementById("giftMessage");
 
-            if (msg) {
-                typeWriter(
-                    "giftMessage",
-                    "You've always dreamed of GTA VI... ❤️\n\nSo here's your Ultimate Edition Surprise.\n\nI hope one day we'll play it together. ❤️",
-                    30
-                );
-            }
+            msg.innerHTML = `
+            <p>
+            Happy Birthday Love ❤️
+            </p>
+
+            <p>
+            I know you've been waiting for <strong>GTA VI</strong> for a very long time.
+            </p>
+
+            <p>
+            So here's a little birthday surprise just for you.
+            </p>
+
+            <p>
+            I hope one day we'll explore Vice City together. ❤️
+            </p>
+            `;
 
         }, 900);
 
@@ -859,13 +869,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
             giftPopup.style.display = "none";
 
+            const trailer = document.getElementById("trailerFrame");
+
+            if(trailer){
+                trailer.src="";
+            }
+
+            document.getElementById("trailerContainer").style.display="none";
+
+            const btn=document.getElementById("watchTrailer");
+
+            if(btn){
+                btn.style.display="inline-flex";
+            }
+
         });
 
     }
 
 });
-
-
 /*=========================================================
                 CONFETTI
 =========================================================*/

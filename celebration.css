@@ -1,1 +1,425 @@
+/* ==========================================================
+   CELEBRATION.CSS
+   PART 2A.1
+   Foundation + Overlay + Containers
+   ========================================================== */
+
+/* ===========================
+   ROOT VARIABLES
+=========================== */
+
+:root{
+
+    --cele-bg:#050816;
+    --cele-bg2:#120b26;
+
+    --pink:#ff4fa3;
+    --pink-light:#ff8fc9;
+
+    --gold:#ffd54f;
+    --gold-dark:#ffb300;
+
+    --white:#ffffff;
+    --soft-white:#f7f7f7;
+
+    --shadow:
+        0 0 25px rgba(255,255,255,.15);
+
+    --glow-pink:
+        0 0 18px rgba(255,79,163,.55);
+
+    --glow-gold:
+        0 0 20px rgba(255,213,79,.45);
+
+}
+
+
+/* ===========================
+   RESET
+=========================== */
+
+#celebrationOverlay,
+#celebrationOverlay *{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+
+/* ===========================
+   OVERLAY
+=========================== */
+
+#celebrationOverlay{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,
+    #2d1645 0%,
+    #13081d 45%,
+    #050816 100%);
+
+    z-index:999999;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    opacity:1;
+
+    visibility:visible;
+
+    transition:
+
+        opacity .8s ease,
+
+        visibility .8s ease;
+
+}
+
+
+/* hidden state */
+
+#celebrationOverlay.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+}
+
+
+/* ===========================
+   BACKGROUND
+=========================== */
+
+#celebrationBackground{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:1;
+
+}
+
+
+/* moving gradient */
+
+#celebrationBackground::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220%;
+
+    height:220%;
+
+    top:-60%;
+
+    left:-60%;
+
+    background:
+
+    radial-gradient(circle,
+    rgba(255,79,163,.12),
+    transparent 55%),
+
+    radial-gradient(circle,
+    rgba(255,213,79,.10),
+    transparent 55%),
+
+    radial-gradient(circle,
+    rgba(120,190,255,.08),
+    transparent 60%);
+
+    animation:
+
+        bgRotate 35s linear infinite;
+
+}
+
+
+/* soft stars */
+
+#celebrationBackground::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    radial-gradient(#ffffff 1px,transparent 1px);
+
+    background-size:55px 55px;
+
+    opacity:.22;
+
+}
+
+
+/* ===========================
+   MAIN SCREEN
+=========================== */
+
+.celebration-screen{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    padding:40px;
+
+    z-index:10;
+
+    opacity:0;
+
+    transform:scale(.95);
+
+    visibility:hidden;
+
+    transition:
+
+    opacity .9s ease,
+
+    transform .9s ease,
+
+    visibility .9s;
+
+}
+
+
+/* active screen */
+
+.celebration-screen.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:scale(1);
+
+}
+
+
+/* ===========================
+   UNIVERSAL WRAPPER
+=========================== */
+
+.birthday-wrapper,
+.panda-wrapper,
+.balloon-area,
+.balloon-message,
+.bouquet-wrapper,
+.cake-wrapper{
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+
+/* ===========================
+   COMMON IMAGE STYLE
+=========================== */
+
+.panda-image,
+.bouquet-image,
+.cake-image{
+
+    display:block;
+
+    max-width:100%;
+
+    user-select:none;
+
+    pointer-events:none;
+
+}
+
+
+/* ===========================
+   GLOW UTILITIES
+=========================== */
+
+.pink-glow{
+
+    filter:
+
+    drop-shadow(0 0 10px #ff4fa3)
+
+    drop-shadow(0 0 22px #ff4fa3);
+
+}
+
+
+.gold-glow{
+
+    filter:
+
+    drop-shadow(0 0 10px #ffd54f)
+
+    drop-shadow(0 0 25px #ffd54f);
+
+}
+
+
+.white-glow{
+
+    filter:
+
+    drop-shadow(0 0 12px white);
+
+}
+
+
+/* ===========================
+   CONFETTI
+=========================== */
+
+#confettiContainer{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:3;
+
+    pointer-events:none;
+
+}
+
+
+/* ===========================
+   FIREWORKS
+=========================== */
+
+#fireworksContainer{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:4;
+
+}
+
+
+/* ===========================
+   FLOATING HEARTS
+=========================== */
+
+#floatingHearts{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:5;
+
+}
+
+
+/* ===========================
+   FADE HELPERS
+=========================== */
+
+.fade-in{
+
+    animation:
+
+    fadeIn .8s forwards;
+
+}
+
+
+.fade-out{
+
+    animation:
+
+    fadeOut .8s forwards;
+
+}
+
+
+/* ===========================
+   SCALE HELPERS
+=========================== */
+
+.zoom-in{
+
+    animation:
+
+    zoomIn 1s forwards;
+
+}
+
+
+.zoom-out{
+
+    animation:
+
+    zoomOut .8s forwards;
+
+}
+
+
+/* ===========================
+   ROTATION
+=========================== */
+
+@keyframes bgRotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
 

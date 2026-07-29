@@ -2930,6 +2930,645 @@
 
 }
 
+/* ==========================================================
+   CELEBRATION.CSS
+   PART 2D.1
+   CAKE + CANDLE + SMOKE
+========================================================== */
+
+
+/* ==========================================================
+   CAKE WRAPPER
+========================================================== */
+
+.cake-wrapper{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+
+/* ==========================================================
+   CAKE IMAGE
+========================================================== */
+
+.cake-image{
+
+    width:min(480px,80vw);
+
+    height:auto;
+
+    user-select:none;
+
+    pointer-events:none;
+
+    filter:
+
+        drop-shadow(0 0 20px rgba(255,255,255,.25))
+
+        drop-shadow(0 0 40px rgba(255,213,79,.25));
+
+}
+
+
+/* ==========================================================
+   CAKE MESSAGE
+========================================================== */
+
+.cake-message{
+
+    font-size:2rem;
+
+    font-weight:600;
+
+    color:#fff;
+
+    text-align:center;
+
+    text-shadow:
+
+        0 0 12px rgba(255,255,255,.45);
+
+}
+
+
+/* ==========================================================
+   CANDLE FLAME
+========================================================== */
+
+#cakeFlame{
+
+    position:absolute;
+
+    width:24px;
+
+    height:42px;
+
+    left:50%;
+
+    top:8%;
+
+    transform:translateX(-50%);
+
+    border-radius:
+
+        50%
+
+        50%
+
+        50%
+
+        50%;
+
+    background:
+
+        radial-gradient(circle,
+
+        #fff9b1 0%,
+
+        #ffd54f 30%,
+
+        #ff9800 70%,
+
+        transparent 100%);
+
+    opacity:0;
+
+    filter:
+
+        blur(.4px)
+
+        drop-shadow(0 0 12px #ffd54f)
+
+        drop-shadow(0 0 30px #ff9800);
+
+}
+
+
+/* ==========================================================
+   FLAME ACTIVE
+========================================================== */
+
+#cakeFlame.lit{
+
+    opacity:1;
+
+    animation:
+
+        candleFlicker .16s infinite alternate,
+
+        flameGlow 1.5s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   BLOWN FLAME
+========================================================== */
+
+#cakeFlame.blown{
+
+    opacity:0;
+
+    animation:none;
+
+}
+
+
+/* ==========================================================
+   SMOKE HOLDER
+========================================================== */
+
+#cakeSmoke{
+
+    position:absolute;
+
+    left:50%;
+
+    top:8%;
+
+    transform:translateX(-50%);
+
+    width:120px;
+
+    height:120px;
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================================
+   SMOKE
+========================================================== */
+
+.smoke{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:50%;
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:
+
+        rgba(255,255,255,.75);
+
+    filter:blur(5px);
+
+    animation:
+
+        smokeRise 2.8s forwards;
+
+}
+
+
+/* ==========================================================
+   BLOW MESSAGE
+========================================================== */
+
+#blowInstruction{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    font-size:1.4rem;
+
+    color:#ffd54f;
+
+    transition:.5s;
+
+}
+
+
+#blowInstruction.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ==========================================================
+   CANDLE FLICKER
+========================================================== */
+
+@keyframes candleFlicker{
+
+    from{
+
+        transform:
+
+            translateX(-50%)
+
+            rotate(-3deg)
+
+            scale(.98);
+
+    }
+
+    to{
+
+        transform:
+
+            translateX(-50%)
+
+            rotate(3deg)
+
+            scale(1.05);
+
+    }
+
+}
+
+
+/* ==========================================================
+   FLAME GLOW
+========================================================== */
+
+@keyframes flameGlow{
+
+    0%{
+
+        filter:
+
+            drop-shadow(0 0 8px #ffd54f)
+
+            drop-shadow(0 0 18px #ff9800);
+
+    }
+
+    50%{
+
+        filter:
+
+            drop-shadow(0 0 15px #fff176)
+
+            drop-shadow(0 0 32px #ff9800);
+
+    }
+
+    100%{
+
+        filter:
+
+            drop-shadow(0 0 8px #ffd54f)
+
+            drop-shadow(0 0 18px #ff9800);
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMOKE RISE
+========================================================== */
+
+@keyframes smokeRise{
+
+    0%{
+
+        opacity:.8;
+
+        transform:
+
+            translate(-50%,0)
+
+            scale(.6);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+
+            translate(-50%,-110px)
+
+            scale(2);
+
+    }
+
+}
+
+/* ==========================================================
+   CELEBRATION.CSS
+   PART 2D.2
+   GUARDIAN + RESPONSIVE + FINAL
+========================================================== */
+
+
+/* ==========================================================
+   OVERLAY FADE
+========================================================== */
+
+#celebrationOverlay.fade-out{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    transition:
+
+        opacity 1s ease,
+
+        visibility 1s ease;
+
+}
+
+
+/* ==========================================================
+   GUARDIAN TRANSITION
+========================================================== */
+
+.guardian-transition{
+
+    animation:
+
+        guardianFade 1.2s ease forwards;
+
+}
+
+
+@keyframes guardianFade{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/* ==========================================================
+   BALLOON BURST PARTICLES
+========================================================== */
+
+.balloon-burst{
+
+    position:fixed;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    z-index:999999;
+
+    animation:
+
+        balloonBurst .8s ease-out forwards;
+
+}
+
+
+@keyframes balloonBurst{
+
+    from{
+
+        transform:
+
+            translate(0,0)
+
+            scale(1);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+
+            translate(var(--dx),var(--dy))
+
+            scale(.2);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SPECIAL MESSAGE
+========================================================== */
+
+#specialMessage{
+
+    opacity:0;
+
+    transform:scale(.85);
+
+    transition:
+
+        .6s;
+
+}
+
+
+#specialMessage.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+
+/* ==========================================================
+   CLICK CURSORS
+========================================================== */
+
+.balloon{
+
+    cursor:pointer;
+
+}
+
+.cake-wrapper{
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================================================
+   DISABLE IMAGE DRAG
+========================================================== */
+
+.celebration-screen img{
+
+    -webkit-user-drag:none;
+
+    user-select:none;
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media(max-width:900px){
+
+    .birthday-title{
+
+        font-size:4rem;
+
+    }
+
+    .birthday-name{
+
+        font-size:2.8rem;
+
+    }
+
+    .panda-image{
+
+        width:320px;
+
+    }
+
+    .bouquet-image{
+
+        width:260px;
+
+    }
+
+    .cake-image{
+
+        width:320px;
+
+    }
+
+    .cake-message{
+
+        font-size:1.5rem;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .celebration-screen{
+
+        padding:25px;
+
+    }
+
+    .birthday-title{
+
+        font-size:3rem;
+
+    }
+
+    .birthday-name{
+
+        font-size:2rem;
+
+    }
+
+    .birthday-subtitle{
+
+        font-size:1rem;
+
+    }
+
+    .panda-image{
+
+        width:250px;
+
+    }
+
+    .bouquet-image{
+
+        width:210px;
+
+    }
+
+    .cake-image{
+
+        width:250px;
+
+    }
+
+    .cake-message{
+
+        font-size:1.2rem;
+
+    }
+
+    .balloon{
+
+        width:85px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   PERFORMANCE
+========================================================== */
+
+.confetti,
+.firework,
+.balloon,
+.heart,
+.smoke{
+
+    will-change:
+
+        transform,
+
+        opacity;
+
+}
+
+
+/* ==========================================================
+   END
+========================================================== */
+
+
 
 
 

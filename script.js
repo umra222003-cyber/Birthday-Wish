@@ -835,7 +835,11 @@ function openGiftAnimation() {
 
     if (!giftBox || !surprise) return;
 
+    // Little animation
     giftBox.style.transform = "scale(1.15) rotate(10deg)";
+    giftBox.style.transition = ".6s";
+
+    createHeartBlast();
 
     setTimeout(() => {
 
@@ -843,7 +847,12 @@ function openGiftAnimation() {
 
         surprise.classList.add("show");
 
-    }, 800);
+        surprise.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    },700);
 
 }
 

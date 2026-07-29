@@ -422,4 +422,541 @@
 
 }
 
+/* ==========================================================
+   CELEBRATION.CSS
+   PART 2A.2
+   Particles + Shared Animations
+========================================================== */
+
+
+/* ==========================================================
+   CONFETTI PIECES
+========================================================== */
+
+.confetti{
+
+    position:absolute;
+
+    width:14px;
+
+    height:14px;
+
+    border-radius:3px;
+
+    opacity:.95;
+
+    animation:confettiFall linear forwards;
+
+    will-change:transform;
+
+}
+
+
+/* Different Shapes */
+
+.confetti.circle{
+
+    border-radius:50%;
+
+}
+
+.confetti.long{
+
+    width:8px;
+
+    height:22px;
+
+    border-radius:20px;
+
+}
+
+.confetti.small{
+
+    width:8px;
+
+    height:8px;
+
+}
+
+
+/* Confetti Colours */
+
+.confetti.pink{
+
+    background:#ff4fa3;
+
+}
+
+.confetti.gold{
+
+    background:#ffd54f;
+
+}
+
+.confetti.white{
+
+    background:#ffffff;
+
+}
+
+.confetti.blue{
+
+    background:#67c5ff;
+
+}
+
+.confetti.purple{
+
+    background:#b66dff;
+
+}
+
+.confetti.green{
+
+    background:#7dff8d;
+
+}
+
+
+/* ==========================================================
+   FIREWORK PARTICLES
+========================================================== */
+
+.firework{
+
+    position:absolute;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    transform:translate(-50%,-50%);
+
+    animation:fireworkBurst 1.4s ease-out forwards;
+
+    pointer-events:none;
+
+}
+
+
+/* Firework Glow */
+
+.firework::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-6px;
+
+    border-radius:50%;
+
+    background:inherit;
+
+    filter:blur(8px);
+
+    opacity:.65;
+
+}
+
+
+/* ==========================================================
+   SPARKLES
+========================================================== */
+
+.sparkle{
+
+    position:absolute;
+
+    width:5px;
+
+    height:5px;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:
+
+        0 0 8px white,
+
+        0 0 18px white;
+
+    animation:sparkleTwinkle 2s infinite ease-in-out;
+
+}
+
+
+/* ==========================================================
+   FLOATING HEARTS
+========================================================== */
+
+.heart{
+
+    position:absolute;
+
+    bottom:-60px;
+
+    color:#ff4fa3;
+
+    opacity:.9;
+
+    font-size:26px;
+
+    animation:heartFloat linear forwards;
+
+    text-shadow:
+
+        0 0 15px rgba(255,79,163,.7);
+
+}
+
+
+/* Different Heart Sizes */
+
+.heart.small{
+
+    font-size:18px;
+
+}
+
+.heart.medium{
+
+    font-size:28px;
+
+}
+
+.heart.large{
+
+    font-size:42px;
+
+}
+
+
+/* ==========================================================
+   BACKGROUND PARTICLES
+========================================================== */
+
+.bg-particle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    opacity:.16;
+
+    animation:bgFloat 18s linear infinite;
+
+    background:rgba(255,255,255,.35);
+
+}
+
+
+/* ==========================================================
+   SHARED KEYFRAMES
+========================================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes fadeOut{
+
+    from{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+
+@keyframes zoomIn{
+
+    from{
+
+        transform:scale(.75);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes zoomOut{
+
+    from{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:scale(.75);
+
+        opacity:0;
+
+    }
+
+}
+
+
+@keyframes floatUp{
+
+    0%{
+
+        transform:translateY(40px);
+
+        opacity:0;
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes pulseGlow{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+@keyframes bounceSoft{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    30%{
+
+        transform:translateY(-18px);
+
+    }
+
+    60%{
+
+        transform:translateY(6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   CONFETTI FALL
+========================================================== */
+
+@keyframes confettiFall{
+
+    0%{
+
+        transform:
+        translateY(-120px)
+        rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(120vh)
+        rotate(720deg);
+
+        opacity:.95;
+
+    }
+
+}
+
+
+/* ==========================================================
+   FIREWORK BURST
+========================================================== */
+
+@keyframes fireworkBurst{
+
+    0%{
+
+        transform:
+        translate(-50%,-50%)
+        scale(.2);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translate(
+        calc(-50% + var(--dx)),
+        calc(-50% + var(--dy)))
+        scale(1);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================================
+   HEART FLOAT
+========================================================== */
+
+@keyframes heartFloat{
+
+    0%{
+
+        transform:
+
+        translateY(0)
+
+        translateX(0)
+
+        scale(.8);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+
+        translateY(-120vh)
+
+        translateX(40px)
+
+        scale(1.3);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ==========================================================
+   STAR TWINKLE
+========================================================== */
+
+@keyframes sparkleTwinkle{
+
+    0%,100%{
+
+        opacity:.2;
+
+        transform:scale(.5);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.4);
+
+    }
+
+}
+
+
+/* ==========================================================
+   BACKGROUND FLOAT
+========================================================== */
+
+@keyframes bgFloat{
+
+    0%{
+
+        transform:
+        translateY(100vh);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(-120vh);
+
+    }
+
+}
+
+
+
+
 

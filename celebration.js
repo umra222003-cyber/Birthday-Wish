@@ -1227,6 +1227,20 @@ async function playGuardianScene(){
 
     }
 
+    if(typeof mainWebsite !== "undefined" && mainWebsite){
+
+        mainWebsite.style.display = "block";
+
+    }
+
+    const music = document.getElementById("bgMusic");
+
+    if(music){
+
+        music.play().catch(()=>{});
+
+    }
+
 }
 
 

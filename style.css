@@ -3121,22 +3121,22 @@ opacity:1;
 
 .gift-message{
 
-    width:88%;
+    width:90%;
+    margin:25px auto;
 
-    margin:20px auto;
+    color:#F6F6F6;
 
-    color:#fff;
+    font-size:18px;
 
-    font-size:22px;
-
-    line-height:1.8;
-
-    font-weight:500;
+    line-height:1.9;
 
     text-align:center;
 
-    white-space:pre-line;
+    white-space:normal;
+}
 
+.gift-message p{
+    margin-bottom:22px;
 }
 
 /*==============================

@@ -3095,12 +3095,16 @@ opacity:1;
 ==============================*/
 
 .gta-image{
+
     width:100%;
+    height:230px;
     display:block;
-    aspect-ratio:16/9;
+
     object-fit:cover;
     object-position:center;
+
     border-radius:22px 22px 0 0;
+
 }
 
 /*==============================

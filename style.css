@@ -3025,92 +3025,159 @@ text-shadow:0 0 20px cyan;
 
 
 /*=========================================================
-            JOURNEY MEMORY GALLERY
+                JOURNEY IMAGE GALLERY
 =========================================================*/
 
 .journey-gallery{
-
     display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+    margin-top:20px;
+}
+
+.journey-gallery.single{
+    display:block;
+}
+
+.journey-photo,
+.journey-gallery img{
+
+    width:100%;
+    display:block;
+
+    border-radius:20px;
+
+    object-fit:cover;
+    object-position:center;
+
+    border:3px solid rgba(255,255,255,.12);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+    transition:.35s ease;
+
+    background:#221134;
+
+}
+
+/* ---------- Baby Image ---------- */
+
+.timeline-item:nth-child(1) .journey-gallery img{
+
+    height:380px;
+
+}
+
+/* ---------- Growing Up ---------- */
+
+.timeline-item:nth-child(2) .journey-gallery{
+
+    grid-template-columns:1.3fr 1fr;
+
+    grid-template-rows:220px 220px;
+
+}
+
+.timeline-item:nth-child(2) img:nth-child(1){
+
+    grid-row:1 / span 2;
+
+    height:100%;
+
+}
+
+.timeline-item:nth-child(2) img:nth-child(2){
+
+    height:220px;
+
+}
+
+.timeline-item:nth-child(2) img:nth-child(3){
+
+    height:220px;
+
+}
+
+.timeline-item:nth-child(2) img:nth-child(4){
+
+    grid-column:1 / span 2;
+
+    height:260px;
+
+}
+
+/* ---------- Parents ---------- */
+
+.timeline-item:nth-child(4) .journey-gallery{
 
     grid-template-columns:repeat(2,1fr);
 
-    gap:18px;
+}
 
-    margin-top:28px;
+.timeline-item:nth-child(4) img{
+
+    height:320px;
+
+}
+
+/* ---------- Today ---------- */
+
+.timeline-item:nth-child(8) .journey-gallery{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.timeline-item:nth-child(8) img{
+
+    height:260px;
+
+}
+
+/* ---------- All Single Images ---------- */
+
+.journey-gallery.single img{
+
+    height:340px;
+
+}
+
+/* ---------- Hover ---------- */
+
+.journey-gallery img:hover{
+
+    transform:translateY(-6px) scale(1.03);
+
+    border-color:var(--gold);
+
+    box-shadow:0 22px 45px rgba(0,0,0,.45);
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media(max-width:768px){
+
+.journey-gallery{
+
+    grid-template-columns:1fr !important;
 
 }
 
 .journey-gallery img{
 
-    width:100%;
-
-    height:220px;
-
-    object-fit:cover;
-
-    object-position:center;
-
-    display:block;
-
-    border-radius:18px;
-
-    border:3px solid rgba(255,255,255,.15);
-
-    background:#24133d;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
-
-    transition:.35s;
+    height:260px !important;
 
 }
 
-.journey-gallery img:hover{
+.journey-gallery.single img{
 
-    transform:scale(1.05);
-
-    border-color:var(--gold);
+    height:280px !important;
 
 }
 
-/* Baby Section */
-
-.timeline-item:first-child .journey-gallery{
-
-    display:block;
-
 }
 
-.timeline-item:first-child .journey-gallery img{
 
-    width:100%;
 
-    height:360px;
-
-    object-fit:cover;
-
-}
-
-/* Mobile */
-
-@media(max-width:768px){
-
-    .journey-gallery{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .journey-gallery img{
-
-        height:240px;
-
-    }
-
-    .timeline-item:first-child .journey-gallery img{
-
-        height:280px;
-
-    }
-
-}
 

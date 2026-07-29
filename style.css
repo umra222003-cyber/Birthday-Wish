@@ -3032,53 +3032,83 @@ text-shadow:0 0 20px cyan;
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:16px;
-    margin-top:20px;
+    margin-top:25px;
 }
 
 .journey-gallery.single{
     display:block;
 }
 
-.journey-photo,
-.journey-gallery img{
+/* All Images */
+
+.journey-gallery img,
+.journey-photo{
 
     width:100%;
-    display:block;
+    height:240px;
 
-    border-radius:20px;
+    display:block;
 
     object-fit:cover;
     object-position:center;
 
+    border-radius:20px;
+
     border:3px solid rgba(255,255,255,.12);
 
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    background:#1d102f;
 
-    transition:.35s ease;
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
 
-    background:#221134;
+    transition:.4s ease;
 
 }
 
-/* ---------- Baby Image ---------- */
+/* Hover */
 
-.timeline-item:nth-child(1) .journey-gallery img{
+.journey-gallery img:hover{
 
-    height:380px;
+    transform:scale(1.03);
+
+    border-color:var(--gold);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.45);
+
+}
+
+/* ---------- Parents ---------- */
+
+.timeline-item:nth-of-type(1) .journey-gallery{
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+.timeline-item:nth-of-type(1) img{
+
+    height:320px;
+
+}
+
+/* ---------- Baby ---------- */
+
+.timeline-item:nth-of-type(2) .journey-gallery.single img{
+
+    height:420px;
 
 }
 
 /* ---------- Growing Up ---------- */
 
-.timeline-item:nth-child(2) .journey-gallery{
+.timeline-item:nth-of-type(3) .journey-gallery{
 
-    grid-template-columns:1.3fr 1fr;
+    grid-template-columns:1.4fr 1fr;
 
-    grid-template-rows:220px 220px;
+    grid-template-rows:210px 210px;
 
 }
 
-.timeline-item:nth-child(2) img:nth-child(1){
+.timeline-item:nth-of-type(3) img:first-child{
 
     grid-row:1 / span 2;
 
@@ -3086,77 +3116,77 @@ text-shadow:0 0 20px cyan;
 
 }
 
-.timeline-item:nth-child(2) img:nth-child(2){
-
-    height:220px;
-
-}
-
-.timeline-item:nth-child(2) img:nth-child(3){
-
-    height:220px;
-
-}
-
-.timeline-item:nth-child(2) img:nth-child(4){
+.timeline-item:nth-of-type(3) img:last-child{
 
     grid-column:1 / span 2;
 
-    height:260px;
+    height:240px;
 
 }
 
-/* ---------- Parents ---------- */
+/* ---------- Passion ---------- */
 
-.timeline-item:nth-child(4) .journey-gallery{
+.timeline-item:nth-of-type(4) .journey-gallery{
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
 
 }
 
-.timeline-item:nth-child(4) img{
+.timeline-item:nth-of-type(4) img{
 
-    height:320px;
+    height:300px;
+
+}
+
+/* ---------- Friends ---------- */
+
+.timeline-item:nth-of-type(5) .journey-gallery.single img{
+
+    height:360px;
 
 }
 
 /* ---------- Today ---------- */
 
-.timeline-item:nth-child(8) .journey-gallery{
+.timeline-item:nth-of-type(6) .journey-gallery{
 
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-.timeline-item:nth-child(8) img{
-
-    height:260px;
+    grid-template-columns:1fr 1fr;
 
 }
 
-/* ---------- All Single Images ---------- */
+.timeline-item:nth-of-type(6) img{
 
-.journey-gallery.single img{
-
-    height:340px;
+    height:320px;
 
 }
 
-/* ---------- Hover ---------- */
-
-.journey-gallery img:hover{
-
-    transform:translateY(-6px) scale(1.03);
-
-    border-color:var(--gold);
-
-    box-shadow:0 22px 45px rgba(0,0,0,.45);
-
-}
-
-/* ---------- Mobile ---------- */
+/* Mobile */
 
 @media(max-width:768px){
+
+.timeline::before{
+
+    left:28px;
+
+}
+
+.timeline-item{
+
+    width:100%;
+
+    left:0 !important;
+
+    padding-left:75px;
+
+    padding-right:10px;
+
+}
+
+.timeline-item::after{
+
+    left:18px;
+
+}
 
 .journey-gallery{
 
@@ -3170,14 +3200,12 @@ text-shadow:0 0 20px cyan;
 
 }
 
-.journey-gallery.single img{
+.timeline-item:nth-of-type(2) .journey-gallery.single img{
 
-    height:280px !important;
-
-}
+    height:300px !important;
 
 }
 
-
+}
 
 

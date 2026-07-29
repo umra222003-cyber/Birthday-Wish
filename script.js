@@ -1342,20 +1342,12 @@ guardianIntro.classList.add("guardian-hidden");
 }
 
 
-const watchTrailer = document.getElementById("watchTrailer");
+function playTrailer() {
 
-if(watchTrailer){
+    document.getElementById("trailerContainer").style.display = "block";
 
-watchTrailer.addEventListener("click",()=>{
-
-document.getElementById("trailerContainer").style.display="block";
-
-document.getElementById("trailerFrame").src =
-"https://www.youtube.com/embed/QdBZY2fkU-0?autoplay=1";
-
-watchTrailer.style.display="none";
-
-});
+    document.getElementById("trailerFrame").src =
+    "https://www.youtube.com/embed/QdBZY2fkU-0?autoplay=1&rel=0";
 
 }
 

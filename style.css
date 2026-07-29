@@ -2852,254 +2852,402 @@ button{
     }
 
 }
-/*=====================================
-        GIFT EXPERIENCE
-=====================================*/
 
-.gift-overlay{
 
-    position:fixed;
+/*=========================================================
+                CINEMATIC GIFT EXPERIENCE
+=========================================================*/
 
-    inset:0;
-
-    background:rgba(0,0,0,.75);
-
-    backdrop-filter:blur(8px);
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:9999;
-
+.gift-section{
+    padding:120px 8%;
+    text-align:center;
 }
+
+/*==============================
+        GIFT BOX
+==============================*/
 
 .gift-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top:60px;
+}
 
-    width:220px;
-
-    height:220px;
-
+.gift-box{
     position:relative;
-
+    width:220px;
+    height:220px;
     cursor:pointer;
+    animation:giftFloat 2.8s ease-in-out infinite;
+}
 
-    animation:bounceGift 2s infinite;
+@keyframes giftFloat{
+
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+    100%{transform:translateY(0);}
 
 }
+
 .gift-base{
 
-    width:220px;
-
-    height:150px;
-
-    background:#ff5f99;
-
-    border-radius:15px;
-
     position:absolute;
-
     bottom:0;
 
+    width:220px;
+    height:150px;
+
+    background:linear-gradient(135deg,#ff5fa2,#ff3d87);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.35);
+
 }
+
 .gift-lid{
 
     position:absolute;
 
     top:0;
-
     left:0;
 
     width:220px;
+    height:70px;
 
-    height:60px;
+    background:linear-gradient(135deg,#ff6fb0,#ff4d8f);
 
-    background:#ff6ca8;
-
-    border-radius:15px 15px 0 0;
-
-    z-index:10;
+    border-radius:18px 18px 0 0;
 
     transform-origin:bottom center;
 
     transition:transform .8s ease;
 
-}
-.gift-lid::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:96px;
-
-    top:0;
-
-    width:28px;
-
-    height:60px;
-
-    background:#ffd84d;
+    z-index:5;
 
 }
 
-.gift-ribbon-horizontal{
-
-    width:220px;
-
-    height:28px;
-
-    background:#ffd84d;
+.gift-ribbon-vertical{
 
     position:absolute;
-
-    top:96px;
-
-}
-.gift-tag{
-
-    position:absolute;
-
-    bottom:-60px;
 
     left:50%;
 
     transform:translateX(-50%);
 
-    width:max-content;
+    width:28px;
+    height:100%;
 
-    color:#ffffff;
-
-    font-size:24px;
-
-    font-weight:bold;
-
-    text-shadow:0 2px 8px rgba(0,0,0,.4);
-
-    animation:blinkText 1.5s infinite;
-
-}
-@keyframes bounceGift{
-
-    50%{
-
-        transform:translateY(-10px);
-
-    }
-
-}
-@keyframes blinkText{
-
-    0%{
-        opacity:1;
-    }
-
-    50%{
-        opacity:.4;
-    }
-
-    100%{
-        opacity:1;
-    }
+    background:#FFD166;
 
 }
 
-.gift-surprise{
+.gift-ribbon-horizontal{
+
+    position:absolute;
+
+    top:60px;
+
+    width:100%;
+    height:28px;
+
+    background:#FFD166;
+
+}
+
+.gift-click-text{
+
+    margin-top:35px;
+
+    font-size:20px;
+
+    color:var(--gold);
+
+    animation:pulseGift 1.8s infinite;
+
+}
+
+@keyframes pulseGift{
+
+    0%,100%{opacity:1;}
+    50%{opacity:.35;}
+
+}
+
+/*==============================
+        POPUP
+==============================*/
+
+.gift-popup{
+
+    position:fixed;
+
+    inset:0;
 
     display:none;
 
-    background:#ffffff;
+    justify-content:center;
+    align-items:center;
 
-    width:85%;
+    padding:25px;
 
-    max-width:900px;
+    background:rgba(0,0,0,.88);
 
-    margin:auto;
+    backdrop-filter:blur(10px);
 
-    padding:60px;
-
-    border-radius:30px;
-
-    text-align:center;
-
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
-
-    animation:fadeUp .8s ease;
-
-    color:#4a235a;
+    z-index:99999;
 
 }
 
-.gift-surprise h2{
-
-    font-size:60px;
-
-    color:#ff3f8e;
-
-    margin-bottom:25px;
-
-    font-weight:700;
-
-}
-.gift-surprise p{
-
-    font-size:26px;
-
-    color:#4b4453;
-
-    line-height:1.8;
-
-    margin:15px 0;
-
-}
-
-.gift-surprise.show{
+.gift-popup.show{
 
     display:flex;
 
 }
 
-@keyframes fadeInUp{
+.gift-card{
 
-    from{
+    position:relative;
 
-        opacity:0;
+    width:95%;
+    max-width:760px;
 
-        transform:translateY(40px);
+    background:linear-gradient(
+        180deg,
+        #2b1648,
+        #1b0d31
+    );
 
-    }
+    border-radius:30px;
 
-    to{
+    overflow:hidden;
 
-        opacity:1;
+    border:2px solid rgba(255,209,102,.25);
 
-        transform:translateY(0);
+    box-shadow:
+    0 35px 80px rgba(0,0,0,.45);
 
-    }
+    animation:popupScale .5s ease;
 
 }
-.gift-surprise{
-    display:none;
-    margin-top:30px;
-    animation:fadeIn .8s ease;
+
+@keyframes popupScale{
+
+from{
+
+transform:scale(.8);
+opacity:0;
+
 }
 
-.gift-surprise.show{
+to{
+
+transform:scale(1);
+opacity:1;
+
+}
+
+}
+
+/*==============================
+        GLOW
+==============================*/
+
+.gift-glow{
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    left:50%;
+    top:-180px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+
+    radial-gradient(circle,
+    rgba(255,209,102,.45),
+    transparent 70%);
+
+    filter:blur(50px);
+
+    animation:glowMove 5s infinite;
+
+}
+
+@keyframes glowMove{
+
+0%{transform:translateX(-50%) scale(.9);}
+50%{transform:translateX(-50%) scale(1.1);}
+100%{transform:translateX(-50%) scale(.9);}
+
+}
+
+/*==============================
+        IMAGE
+==============================*/
+
+.gta-image{
+
+    width:100%;
+
+    max-height:420px;
+
+    object-fit:cover;
+
     display:block;
+
 }
 
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+/*==============================
+        TITLE
+==============================*/
+
+.gift-card h2{
+
+    margin:30px 25px 15px;
+
+    color:var(--gold);
+
 }
+
+/*==============================
+        MESSAGE
+==============================*/
+
+.gift-message{
+
+    width:90%;
+
+    margin:auto;
+
+    min-height:230px;
+
+    color:#F6F6F6;
+
+    font-size:19px;
+
+    line-height:2;
+
+    white-space:pre-line;
+
+}
+
+/*==============================
+        BUTTONS
+==============================*/
+
+.gift-button{
+
+    display:inline-block;
+
+    margin:25px auto;
+
+    padding:18px 40px;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        #ff4d6d,
+        #7B2CBF
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.gift-button:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.continue-btn{
+
+    margin:0 auto 35px;
+
+    padding:18px 36px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(
+        135deg,
+        var(--gold),
+        #F4A261
+    );
+
+    color:#222;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.continue-btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/*==============================
+        RESPONSIVE
+==============================*/
+
+@media(max-width:768px){
+
+.gift-box{
+
+width:170px;
+height:170px;
+
+}
+
+.gift-base{
+
+width:170px;
+height:120px;
+
+}
+
+.gift-lid{
+
+width:170px;
+height:55px;
+
+}
+
+.gift-message{
+
+font-size:17px;
+
+}
+
+.gta-image{
+
+max-height:300px;
+
+}
+
+}
+
+
 
 /* ================================
    GUARDIAN INTRO

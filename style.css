@@ -4,22 +4,20 @@
 =========================================================*/
 
 #guardianIntro{
+
     position:fixed;
     inset:0;
+
     width:100%;
     height:100vh;
-    overflow:hidden;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    background:
-    radial-gradient(circle at center,
-    rgba(20,35,60,.35),
-    rgba(0,0,0,.95));
+    background:rgba(0,0,0,.82);
 
-    backdrop-filter:blur(4px);
+    overflow:hidden;
 
     z-index:999999;
 
@@ -30,13 +28,10 @@
 }
 
 #guardianIntro.show{
+
     opacity:1;
     visibility:visible;
-}
 
-.guardian-hidden{
-    opacity:0;
-    visibility:hidden;
 }
 
 /* Dark overlay */
@@ -47,59 +42,57 @@
     inset:0;
 
     background:
-    linear-gradient(
-    to right,
-    rgba(0,0,0,.15),
-    rgba(0,0,0,.55)
-    );
-
-    z-index:1;
+    radial-gradient(circle at center,
+    rgba(60,120,180,.20),
+    rgba(0,0,0,.90));
 
 }
 
-/*======================================
-            MAIN CONTENT
-======================================*/
+/*==========================
+        MAIN LAYOUT
+==========================*/
 
 .guardian-content{
 
     position:relative;
 
-    width:96%;
-    max-width:1900px;
+    width:100%;
     height:100vh;
 
-    display:flex;
+    display:grid;
+    grid-template-columns:72% 28%;
+
     align-items:center;
-    justify-content:space-between;
 
     z-index:5;
 
 }
 
-/*======================================
-            IMAGE
-======================================*/
+/*==========================
+        GUARDIAN IMAGE
+==========================*/
 
 .guardian-image{
 
-    width:66vw;
-    max-width:1350px;
-    min-width:900px;
+    width:100%;
+    height:100vh;
 
     object-fit:contain;
-
-    transform:scale(.82);
+    object-position:left center;
 
     opacity:0;
 
-    transition:1.2s ease;
+    transform:scale(.9);
 
     filter:
-    drop-shadow(0 0 25px #59d7ff)
-    drop-shadow(0 0 65px #59d7ff);
+        drop-shadow(0 0 25px #4fdfff)
+        drop-shadow(0 0 60px #4fdfff);
+
+    transition:1.2s ease;
 
 }
+
+/* JS adds this */
 
 .guardian-image.guardian-show{
 
@@ -108,144 +101,131 @@
     transform:scale(1);
 
     animation:
-
-    guardianFloat 5s ease-in-out infinite,
-
-    guardianShake .18s infinite;
+        guardianFloat 5s ease-in-out infinite,
+        guardianShake .7s infinite alternate;
 
 }
 
-/*======================================
-            TEXT
-======================================*/
+/*==========================
+        TEXT
+==========================*/
 
 .guardian-text{
 
-    width:30%;
+    width:100%;
 
-    color:white;
+    padding-right:70px;
+
+    color:#ecffff;
 
     font-size:2rem;
 
+    font-weight:700;
+
     line-height:1.9;
 
-    font-weight:600;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:100vh;
 
     text-align:left;
 
-    padding-right:60px;
-
     text-shadow:
 
-    0 0 12px #4bdfff,
-
-    0 0 30px #4bdfff;
+        0 0 10px #53d9ff,
+        0 0 30px #53d9ff,
+        0 0 60px #53d9ff;
 
 }
 
-/*======================================
-        IMAGE FLOAT
-======================================*/
+/*==========================
+        FLOAT
+==========================*/
 
 @keyframes guardianFloat{
 
-0%{
+    0%{
+        transform:translateY(0px) scale(1);
+    }
 
-transform:translateY(0) scale(1);
+    50%{
+        transform:translateY(-10px) scale(1.01);
+    }
 
-}
-
-50%{
-
-transform:translateY(-10px) scale(1.015);
-
-}
-
-100%{
-
-transform:translateY(0) scale(1);
+    100%{
+        transform:translateY(0px) scale(1);
+    }
 
 }
 
-}
-
-/*======================================
-        SUBTLE SHAKE
-======================================*/
+/*==========================
+        SHAKE
+==========================*/
 
 @keyframes guardianShake{
 
-0%{
+    0%{
+        transform:translateX(-2px);
+    }
 
-transform:translateX(0);
+    25%{
+        transform:translateX(2px);
+    }
 
-}
+    50%{
+        transform:translateX(-2px);
+    }
 
-25%{
+    75%{
+        transform:translateX(2px);
+    }
 
-transform:translateX(1px);
-
-}
-
-50%{
-
-transform:translateX(-1px);
-
-}
-
-75%{
-
-transform:translateX(1px);
+    100%{
+        transform:translateX(0px);
+    }
 
 }
 
-100%{
-
-transform:translateX(0);
-
-}
-
-}
-
-/*======================================
+/*==========================
         MOBILE
-======================================*/
+==========================*/
 
 @media(max-width:1000px){
 
-.guardian-content{
+    .guardian-content{
 
-flex-direction:column;
+        grid-template-columns:1fr;
+        grid-template-rows:auto auto;
 
-justify-content:center;
+    }
 
-gap:40px;
+    .guardian-image{
 
-}
+        height:60vh;
 
-.guardian-image{
+        object-position:center;
 
-width:100%;
+    }
 
-min-width:0;
+    .guardian-text{
 
-max-width:700px;
+        min-height:auto;
 
-}
+        padding:30px;
 
-.guardian-text{
+        text-align:center;
 
-width:100%;
+        font-size:1.3rem;
 
-padding:0;
-
-font-size:1.35rem;
-
-text-align:center;
+    }
 
 }
 
-}
+
 /*=========================================================
                 JOURNEY IMAGE GALLERY
 =========================================================*/

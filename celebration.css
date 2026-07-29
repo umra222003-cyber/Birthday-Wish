@@ -1425,7 +1425,76 @@
 
 }
 
+/* ==========================================================
+   BIRTHDAY MODULE
+========================================================== */
 
+.birthday-screen{
+
+    background:
+    radial-gradient(circle at center,
+    rgba(255,255,255,.05),
+    transparent 70%);
+
+}
+
+.birthday-wrapper{
+
+    animation:birthdayScene 5s ease forwards;
+
+}
+
+@keyframes birthdayScene{
+
+    0%{
+
+        opacity:0;
+        transform:scale(.8);
+
+    }
+
+    15%{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+    80%{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+    100%{
+
+        opacity:0;
+        transform:scale(1.05);
+
+    }
+
+}
+
+.birthday-title{
+
+    animation:
+
+    birthdayZoom 1s ease,
+
+    birthdayGlow 2.5s infinite;
+
+}
+
+.birthday-name{
+
+    animation:
+
+    birthdayFadeUp 1.2s ease .5s forwards,
+
+    pulseSoft 2s infinite;
+
+}
 
 
 

@@ -1318,3 +1318,22 @@ guardianIntro.classList.remove("show");
 guardianIntro.classList.add("guardian-hidden");
 
 }
+
+
+const watchTrailer = document.getElementById("watchTrailer");
+
+if(watchTrailer){
+
+watchTrailer.addEventListener("click",()=>{
+
+document.getElementById("trailerContainer").style.display="block";
+
+document.getElementById("trailerFrame").src =
+"https://www.youtube.com/embed/QdBZY2fkU-0?autoplay=1";
+
+watchTrailer.style.display="none";
+
+});
+
+}
+

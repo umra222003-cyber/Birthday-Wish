@@ -127,9 +127,17 @@ async function startCelebration(){
 
     if(Celebration.active) return;
 
-    Celebration.active=true;
+    Celebration.active = true;
 
     celebrationOverlay.classList.remove("hidden");
+
+    // Play Birthday Song
+    const birthdaySong = document.getElementById("birthdaySong");
+
+    if (birthdaySong) {
+        birthdaySong.currentTime = 0;
+        birthdaySong.play().catch(() => {});
+    }
 
     await playBirthdayScene();
 
@@ -143,6 +151,13 @@ async function startCelebration(){
 function endCelebration(){
 
     clearCelebration();
+
+    const birthdaySong = document.getElementById("birthdaySong");
+
+    if (birthdaySong) {
+        birthdaySong.pause();
+        birthdaySong.currentTime = 0;
+    }
 
     celebrationOverlay.classList.add("hidden");
 

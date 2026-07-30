@@ -860,6 +860,8 @@ async function playBouquetScene(){
     showScreen("bouquet");
 
     animateBouquet();
+    animateBouquetMessage();
+    startBouquetFloat();
 
     launchConfetti(120);
 

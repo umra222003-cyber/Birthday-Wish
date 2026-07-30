@@ -206,11 +206,8 @@ function openEnvelope(){
 
 async function checkPassword() {
 
-    const enteredPassword =
-        document.getElementById("password").value.trim();
-
-    const errorMessage =
-        document.getElementById("error");
+    const enteredPassword = document.getElementById("password").value.trim();
+    const errorMessage = document.getElementById("error");
 
     if (enteredPassword === PASSWORD) {
 
@@ -261,7 +258,6 @@ async function checkPassword() {
     }
 
 }
-
 
 const unlockBtn = document.getElementById("unlockBtn");
 

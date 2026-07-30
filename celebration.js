@@ -799,20 +799,26 @@ function createBalloonBurst(balloon){
 
 async function showSpecialMessage(){
 
-    const msg=document.getElementById("specialMessage");
+    const msg = document.getElementById("specialMessage");
 
     if(!msg) return;
+
+    // Add the message
+    msg.innerHTML = `
+        <h2>❤️ You are so special ❤️</h2>
+        <p>
+            May every dream you have come true.<br>
+            You deserve all the happiness, love and success in the world.
+        </p>
+    `;
 
     msg.classList.add("show");
 
     launchConfetti(180);
 
     createFirework(
-
-        window.innerWidth/2,
-
-        window.innerHeight/3
-
+        window.innerWidth / 2,
+        window.innerHeight / 3
     );
 
     await wait(3500);

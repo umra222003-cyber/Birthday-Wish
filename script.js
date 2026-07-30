@@ -207,63 +207,62 @@ function openEnvelope(){
 async function checkPassword() {
 
     const enteredPassword =
-    document.getElementById("password").value.trim();
+        document.getElementById("password").value.trim();
 
-const errorMessage =
-    document.getElementById("error");
+    const errorMessage =
+        document.getElementById("error");
 
     if (enteredPassword === PASSWORD) {
 
         openEnvelope();
 
-errorMessage.style.color = "#00E676";
-errorMessage.textContent = "💖 Welcome...";
+        errorMessage.style.color = "#00E676";
+        errorMessage.textContent = "💖 Welcome...";
 
-setTimeout(async () => {
+        setTimeout(async () => {
 
-    welcomeScreen.style.opacity = "0";
+            welcomeScreen.style.opacity = "0";
 
-    setTimeout(async () => {
+            setTimeout(async () => {
 
-        welcomeScreen.style.display = "none";
+                welcomeScreen.style.display = "none";
 
-       /* ===========================
-   START CELEBRATION
-=========================== */
+                if (typeof startCelebration === "function") {
 
-if (typeof startCelebration === "function") {
+                    console.log("Starting Celebration...");
 
-    console.log("Starting Celebration...");
+                    await startCelebration();
 
-    await startCelebration();
+                } else {
 
-} else {
+                    console.log("Celebration not found. Starting Guardian...");
 
-    console.log("Celebration not found. Starting Guardian...");
+                    await playGuardianIntro();
 
-    await playGuardianIntro();
+                    mainWebsite.style.display = "block";
 
-    mainWebsite.style.display = "block";
+                    const music = document.getElementById("bgMusic");
 
-    const music = document.getElementById("bgMusic");
+                    if (music) {
+                        music.play().catch(() => {});
+                    }
 
-    if (music) {
+                }
 
-        music.play().catch(() => {});
+            }, 700);
 
-    }
+        }, 700);
 
-}
-}, 700);
+    } else {
 
-    }else{
-
-        errorMessage.style.color="#ff5252";
-        errorMessage.textContent="Incorrect Password";
+        errorMessage.style.color = "#ff5252";
+        errorMessage.textContent = "Incorrect Password";
 
     }
 
 }
+
+
 const unlockBtn = document.getElementById("unlockBtn");
 
 if (unlockBtn) {
